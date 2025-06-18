@@ -449,11 +449,33 @@
             border-radius: 2rem;
             overflow: hidden;
             transition: all 0.4s ease;
+            position: relative;
+        }
+
+        .about-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(179, 135, 120, 0.03) 0%, rgba(179, 135, 120, 0.01) 100%);
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .about-card > .flex {
+            position: relative;
+            z-index: 1;
         }
 
         .about-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 25px 50px rgba(201, 160, 141, 0.2);
+            box-shadow: 0 25px 50px var(--shadow);
+        }
+
+        [data-theme="dark"] .about-card::before {
+            background: transparent;
         }
 
         .about-icon-wrapper {
@@ -1099,6 +1121,7 @@
             position: relative;
             padding: 0.5rem 1rem;
             border-radius: 0.5rem;
+            font-weight: 600;
             transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
@@ -1147,9 +1170,7 @@
         }
 
         .mobile-menu-bg {
-            background-color: #4A4A4A;
-            border-color: rgba(168, 159, 150, 0.2);
-            backdrop-filter: blur(10px);
+            background-color: var(--nav-bg);
         }
 
         .mobile-nav-link {
@@ -1182,6 +1203,172 @@
             color: #C9A08D;
             transform: scale(1.1);
         }
+
+        /* Dark Mode Styles */
+        :root {
+            /* Light theme colors - New elegant palette */
+            --bg-primary: #F5F4F2;           /* Creamy Pearl - main background */
+            --bg-secondary: #F5F4F2;         /* Creamy Pearl - section backgrounds */
+            --bg-tertiary: #F0EFED;          /* Slightly darker variant for contrast */
+            --text-primary: #4A4A4A;         /* Charcoal Gray - primary text */
+            --text-secondary: #5A5A5A;       /* Lighter variant for secondary text */
+            --text-tertiary: #4A4A4A;        /* Charcoal Gray - tertiary text */
+            --accent-primary: #B38778;       /* Rose Taupe - primary accent */
+            --accent-secondary: #C9A08D;     /* Keeping original for gradient harmony */
+            --nav-bg: #F5F4F2;              /* Creamy Pearl for navigation */
+            --card-bg: #E4E2DF;             /* Pure white for better card contrast */
+            --border-color: rgba(179, 135, 120, 0.2);  /* Rose Taupe with transparency */
+            --shadow: rgba(74, 74, 74, 0.1); /* Charcoal Gray shadow */
+        }
+
+        [data-theme="dark"] {
+            /* Dark theme colors - matching current site design */
+            --bg-primary: #4A4A4A;
+            --bg-secondary: #4A4A4A;
+            --bg-tertiary: #6B6B6B;
+            --text-primary: #f9fafb;
+            --text-secondary: #d1d5db;
+            --text-tertiary: #A89F96;
+            --accent-primary: #C9A08D;
+            --accent-secondary: #A89F96;
+            --nav-bg: #4A4A4A;
+            --card-bg: #4A4A4A;
+            --border-color: rgba(201, 160, 141, 0.2);
+            --shadow: rgba(201, 160, 141, 0.15);
+        }
+
+        /* Theme Toggle Button Styles */
+        .theme-toggle {
+            position: relative;
+            width: 60px;
+            height: 30px;
+            background: rgba(201, 160, 141, 0.2);
+            border-radius: 15px;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            overflow: hidden;
+        }
+
+        .theme-toggle:hover {
+            background: rgba(201, 160, 141, 0.3);
+            transform: scale(1.05);
+        }
+
+        .theme-toggle-slider {
+            position: absolute;
+            top: 3px;
+            left: 3px;
+            width: 24px;
+            height: 24px;
+            background: #C9A08D;
+            border-radius: 50%;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        .theme-toggle-icon {
+            font-size: 12px;
+            color: white;
+            transition: all 0.3s ease;
+        }
+
+        [data-theme="dark"] .theme-toggle-slider {
+            transform: translateX(30px);
+            background: #A89F96;
+        }
+
+        [data-theme="dark"] .theme-toggle {
+            background: rgba(168, 159, 150, 0.2);
+        }
+
+        /* Mobile theme toggle */
+        .mobile-theme-toggle {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 12px 16px;
+            color: var(--text-tertiary);
+            transition: all 0.3s ease;
+            border-radius: 8px;
+            margin: 4px 0;
+        }
+
+        .mobile-theme-toggle:hover {
+            background: rgba(201, 160, 141, 0.1);
+            color: var(--accent-primary);
+        }
+
+        .mobile-theme-toggle .theme-toggle {
+            width: 50px;
+            height: 25px;
+        }
+
+        .mobile-theme-toggle .theme-toggle-slider {
+            width: 19px;
+            height: 19px;
+            top: 3px;
+        }
+
+        [data-theme="dark"] .mobile-theme-toggle .theme-toggle-slider {
+            transform: translateX(25px);
+        }
+
+        /* Smooth theme transition */
+        * {
+            transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+        }
+
+        /* Update body and main elements for theme support */
+        body {
+            background-color: var(--bg-primary);
+            color: var(--text-primary);
+        }
+
+        .nav-header {
+            background-color: var(--nav-bg);
+        }
+
+        .mobile-menu-bg {
+            background-color: var(--nav-bg);
+        }
+
+        /* Enhanced about card for light mode visibility */
+        .about-card {
+            border-radius: 2rem;
+            overflow: hidden;
+            transition: all 0.4s ease;
+            position: relative;
+        }
+
+        .about-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(179, 135, 120, 0.03) 0%, rgba(179, 135, 120, 0.01) 100%);
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .about-card > * {
+            position: relative;
+            z-index: 1;
+        }
+
+        .about-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 25px 50px var(--shadow);
+        }
+
+        [data-theme="dark"] .about-card::before {
+            background: transparent;
+        }
     </style>
 </head>
 <body class="bg-gray-50 text-gray-800">
@@ -1201,6 +1388,12 @@
                     <a href="#experience" class="nav-link-custom">Expériences</a>
                     <a href="#skills" class="nav-link-custom">Compétences</a>
                     <a href="#contact" class="nav-contact-btn">Contact</a>
+                    <!-- Theme Toggle Button -->
+                    <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">
+                        <div class="theme-toggle-slider">
+                            <i class="theme-toggle-icon fas fa-moon"></i>
+                        </div>
+                    </button>
                 </div>
                 <div class="md:hidden">
                     <button id="menu-btn" class="hamburger-btn focus:outline-none">
@@ -1219,12 +1412,21 @@
                 <a href="#experience" class="mobile-nav-link nav-link block px-4 py-2 rounded-md" style="--i: 3">Expériences</a>
                 <a href="#skills" class="mobile-nav-link nav-link block px-4 py-2 rounded-md" style="--i: 4">Compétences</a>
                 <a href="#contact" class="mobile-contact-btn block px-4 py-2 rounded-md text-center" style="--i: 5">Contact</a>
+                <!-- Mobile Theme Toggle -->
+                <div class="mobile-theme-toggle" style="--i: 6">
+                    <span><i class="fas fa-palette mr-2"></i>Mode sombre</span>
+                    <button id="mobile-theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">
+                        <div class="theme-toggle-slider">
+                            <i class="theme-toggle-icon fas fa-moon"></i>
+                        </div>
+                    </button>
+                </div>
             </div>
         </div>
     </nav>
 
     <!-- Hero Section -->
-    <section id="about" class="min-h-[90vh] flex items-center relative" style="background-color: #4A4A4A;">
+    <section id="about" class="min-h-[90vh] flex items-center relative" style="background-color: var(--bg-secondary);">
         <div class="absolute inset-0 opacity-10">
             <div class="absolute inset-0 pattern-bg"></div>
         </div>
@@ -1233,21 +1435,21 @@
             <div class="flex flex-col md:flex-row items-center justify-between gap-8 md:gap-12">
                 <div class="w-full md:w-1/2 text-center md:text-left" data-aos="fade-right" data-aos-duration="1000">
                     <div class="space-y-4 sm:space-y-6">
-                        <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold leading-tight" style="color: #A89F96;">
+                        <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold leading-tight" style="color: var(--text-tertiary);">
                             Imane Zerouali
-                            <span class="block text-2xl sm:text-3xl md:text-4xl font-semibold mt-2" style="color: #C9A08D;">Consultante Commerciale & Digitale</span>
+                            <span class="block text-2xl sm:text-3xl md:text-4xl font-semibold mt-2" style="color: var(--accent-primary);">Consultante Commerciale & Digitale</span>
                         </h1>
                         
-                        <p class="text-lg sm:text-xl font-medium leading-relaxed" style="color: #A89F96;">
+                        <p class="text-lg sm:text-xl font-medium leading-relaxed" style="color: var(--text-tertiary);">
                             J'aide les entreprises à renforcer leur présence digitale tout en structurant leur développement commercial.
                         </p>
 
                         <div class="flex flex-wrap justify-center md:justify-start gap-3 sm:gap-4 pt-4">
-                            <a href="#contact" class="group w-full sm:w-auto inline-flex items-center justify-center px-6 py-3 font-medium rounded-xl transition-all duration-300 transform hover:scale-105" style="background-color: #C9A08D; color: white;">
+                            <a href="#contact" class="group w-full sm:w-auto inline-flex items-center justify-center px-6 py-3 font-medium rounded-xl transition-all duration-300 transform hover:scale-105" style="background-color: var(--accent-primary); color: white;">
                                 <i class="fas fa-envelope mr-2 group-hover:translate-x-1 transition-transform duration-300"></i>
                                 Me contacter
                             </a>
-                            <a href="#" class="group w-full sm:w-auto inline-flex items-center justify-center px-6 py-3 font-medium rounded-xl transition-all duration-300 transform hover:scale-105 border-2" style="border-color: #C9A08D; color: #C9A08D; background-color: transparent;" id="download-cv">
+                            <a href="#" class="group w-full sm:w-auto inline-flex items-center justify-center px-6 py-3 font-medium rounded-xl transition-all duration-300 transform hover:scale-105 border-2" style="border-color: var(--accent-primary); color: var(--accent-primary); background-color: transparent;" id="download-cv">
                                 <i class="fas fa-download mr-2 group-hover:translate-y-1 transition-transform duration-300"></i>
                                 Télécharger mon CV
                             </a>
@@ -1255,13 +1457,13 @@
 
                         <!-- Quick stats -->
                         <div class="grid grid-cols-2 md:grid-cols-2 gap-3 sm:gap-4 pt-6 sm:pt-8">
-                            <div class="backdrop-blur-sm rounded-xl p-3 sm:p-4 shadow-sm hover:shadow-md transition-all duration-300" style="background-color: rgba(168, 159, 150, 0.2); border: 1px solid rgba(168, 159, 150, 0.3);">
-                                <div class="text-xl sm:text-2xl font-bold" style="color: #C9A08D;">3+</div>
-                                <div class="text-xs sm:text-sm" style="color: #A89F96;">Années d'expérience</div>
+                            <div class="backdrop-blur-sm rounded-xl p-3 sm:p-4 shadow-sm hover:shadow-md transition-all duration-300" style="background-color: rgba(168, 159, 150, 0.2); border: 1px solid var(--border-color);">
+                                <div class="text-xl sm:text-2xl font-bold" style="color: var(--accent-primary);">3+</div>
+                                <div class="text-xs sm:text-sm" style="color: var(--text-tertiary);">Années d'expérience</div>
                             </div>
-                            <div class="backdrop-blur-sm rounded-xl p-3 sm:p-4 shadow-sm hover:shadow-md transition-all duration-300" style="background-color: rgba(168, 159, 150, 0.2); border: 1px solid rgba(168, 159, 150, 0.3);">
-                                <div class="text-xl sm:text-2xl font-bold" style="color: #C9A08D;">100%</div>
-                                <div class="text-xs sm:text-sm" style="color: #A89F96;">Satisfaction client</div>
+                            <div class="backdrop-blur-sm rounded-xl p-3 sm:p-4 shadow-sm hover:shadow-md transition-all duration-300" style="background-color: rgba(168, 159, 150, 0.2); border: 1px solid var(--border-color);">
+                                <div class="text-xl sm:text-2xl font-bold" style="color: var(--accent-primary);">100%</div>
+                                <div class="text-xs sm:text-sm" style="color: var(--text-tertiary);">Satisfaction client</div>
                             </div>
                         </div>
                     </div>
@@ -1270,12 +1472,12 @@
                 <div class="w-full md:w-1/2 flex justify-center" data-aos="fade-up" data-aos-duration="1000">
                     <div class="relative">
                         <!-- Main profile circle -->
-                        <div class="w-64 h-64 sm:w-72 sm:h-72 md:w-96 md:h-96 rounded-full overflow-hidden border-4 shadow-2xl relative" style="background: linear-gradient(135deg, #A89F96, #C9A08D); border-color: #C9A08D;">
+                        <div class="w-64 h-64 sm:w-72 sm:h-72 md:w-96 md:h-96 rounded-full overflow-hidden border-4 shadow-2xl relative" style="background: linear-gradient(135deg, var(--accent-secondary), var(--accent-primary)); border-color: var(--accent-primary);">
                             <img draggable="false" src="profile.png" alt="Imane Zerouali" class="w-full h-full object-cover">
                             
                             <!-- Decorative circles -->
-                            <div class="absolute -top-4 -right-4 w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 rounded-full opacity-50 animate-pulse" style="background-color: #A89F96;"></div>
-                            <div class="absolute -bottom-4 -left-4 w-20 h-20 sm:w-24 sm:h-24 md:w-32 md:h-32 rounded-full opacity-50 animate-pulse" style="background-color: #C9A08D; animation-delay: 1s;"></div>
+                            <div class="absolute -top-4 -right-4 w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 rounded-full opacity-50 animate-pulse" style="background-color: var(--accent-secondary);"></div>
+                            <div class="absolute -bottom-4 -left-4 w-20 h-20 sm:w-24 sm:h-24 md:w-32 md:h-32 rounded-full opacity-50 animate-pulse" style="background-color: var(--accent-primary); animation-delay: 1s;"></div>
                         </div>
                     </div>
                 </div>
@@ -1284,30 +1486,30 @@
     </section>
 
     <!-- About Section -->
-    <section class="py-24" style="background: linear-gradient(to bottom, #4A4A4A 0%, #6B6B6B 100%);">
+    <section class="py-24" style="background: linear-gradient(to bottom, var(--bg-secondary) 0%, var(--bg-tertiary) 100%);">
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 about-container">
             <div class="text-center mb-16" data-aos="fade-up">
-                <h2 class="text-4xl font-bold mb-4" style="color: #C9A08D;">À propos</h2>
-                <div class="w-24 h-1 mx-auto" style="background-color: #C9A08D;"></div>
+                <h2 class="text-4xl font-bold mb-4" style="color: var(--accent-primary);">À propos</h2>
+                <div class="w-24 h-1 mx-auto" style="background-color: var(--accent-primary);"></div>
             </div>
             
-            <div class="about-card" data-aos="fade-up" data-aos-delay="200" style="background: #4A4A4A; box-shadow: 0 20px 40px rgba(201, 160, 141, 0.15);">
+            <div class="about-card" data-aos="fade-up" data-aos-delay="200" style="background: var(--card-bg); box-shadow: 0 20px 40px var(--shadow); border: 1px solid var(--border-color);">
                 <div class="flex flex-col items-center py-12">
                     <div class="about-icon-wrapper mb-8">
-                        <div class="about-icon-bg" style="background: linear-gradient(135deg, #C9A08D 0%, #6B6B6B 100%); opacity: 0.2;"></div>
-                        <div class="about-icon" style="background: linear-gradient(135deg, #C9A08D 0%, #6B6B6B 100%);">
+                        <div class="about-icon-bg" style="background: linear-gradient(135deg, var(--accent-primary) 0%, var(--accent-secondary) 100%); opacity: 0.2;"></div>
+                        <div class="about-icon" style="background: linear-gradient(135deg, var(--accent-primary) 0%, var(--accent-secondary) 100%);">
                             <i class="fas fa-user-tie"></i>
                         </div>
                     </div>
                     
                     <div class="about-content max-w-3xl mx-auto">
                         <div class="about-text">
-                            <p style="color: #B0B0B0;">
-                                Diplômée en <span class="about-highlight" style="color: #C9A08D;">management des organisations</span>, je mets aujourd'hui mes compétences administratives, commerciales et digitales au service d'entreprises ambitieuses. Fondatrice de <span class="about-highlight" style="color: #C9A08D;">Digital Waves</span>, une micro-entreprise spécialisée en social media marketing, j'ai accompagné un acteur BTP à Meknès (+ 40 % d'engagement, 15 devis, 2 contrats) et dynamisé la visibilité d'un restaurant à Roubaix (campagnes multicanales, contenu visuel).
-        </p>
-                            <p style="color: #B0B0B0;">
-                                Grâce à cette double expertise – <span class="about-highlight" style="color: #C9A08D;">gestion de cycle commercial</span> et <span class="about-highlight" style="color: #C9A08D;">coordination de projets digitaux</span> – je suis capable de piloter des campagnes performantes, de conclure des contrats et d'organiser les tâches opérationnelles avec efficacité. Rigoureuse, orientée résultats et disponible immédiatement, je souhaite contribuer au développement d'équipes dynamiques en <span class="about-highlight" style="color: #C9A08D;">CDI</span> ou en <span class="about-highlight" style="color: #C9A08D;">immersion</span>, sur le territoire lillois.
-        </p>
+                            <p style="color: var(--text-secondary); font-size: 1.1rem; line-height: 1.8; font-weight: 500;">
+                                Diplômée en <span class="about-highlight" style="color: var(--accent-primary); font-weight: 600;">management des organisations</span>, je mets aujourd'hui mes compétences administratives, commerciales et digitales au service d'entreprises ambitieuses. Fondatrice de <span class="about-highlight" style="color: var(--accent-primary); font-weight: 600;">Digital Waves</span>, une micro-entreprise spécialisée en social media marketing, j'ai accompagné un acteur BTP à Meknès (+ 40 % d'engagement, 15 devis, 2 contrats) et dynamisé la visibilité d'un restaurant à Roubaix (campagnes multicanales, contenu visuel).
+                            </p>
+                            <p style="color: var(--text-secondary); font-size: 1.1rem; line-height: 1.8; font-weight: 500;">
+                                Grâce à cette double expertise – <span class="about-highlight" style="color: var(--accent-primary); font-weight: 600;">gestion de cycle commercial</span> et <span class="about-highlight" style="color: var(--accent-primary); font-weight: 600;">coordination de projets digitaux</span> – je suis capable de piloter des campagnes performantes, de conclure des contrats et d'organiser les tâches opérationnelles avec efficacité. Rigoureuse, orientée résultats et disponible immédiatement, je souhaite contribuer au développement d'équipes dynamiques en <span class="about-highlight" style="color: var(--accent-primary); font-weight: 600;">CDI</span> ou en <span class="about-highlight" style="color: var(--accent-primary); font-weight: 600;">immersion</span>, sur le territoire lillois.
+                            </p>
                         </div>
                     </div>
                 </div>
@@ -1316,68 +1518,68 @@
     </section>
 
     <!-- Services Section -->
-    <section id="services" class="py-20" style="background: linear-gradient(to bottom, #6B6B6B 0%, #4A4A4A 100%);">
+    <section id="services" class="py-20" style="background: linear-gradient(to bottom, var(--bg-tertiary) 0%, var(--bg-secondary) 100%);">
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16" data-aos="fade-up">
-                <h2 class="text-3xl font-bold mb-4" style="color: #C9A08D;">Mes Services</h2>
-                <p class="max-w-2xl mx-auto text-lg font-medium" style="color: #D0D0D0;">Je propose un accompagnement complet pour soulager votre entreprise des tâches administratives, commerciales et digitales.</p>
-                <div class="w-20 h-1 mx-auto mt-4" style="background-color: #C9A08D;"></div>
+                <h2 class="text-3xl font-bold mb-4" style="color: var(--accent-primary);">Mes Services</h2>
+                <p class="max-w-2xl mx-auto text-lg font-medium" style="color: var(--text-secondary);">Je propose un accompagnement complet pour soulager votre entreprise des tâches administratives, commerciales et digitales.</p>
+                <div class="w-20 h-1 mx-auto mt-4" style="background-color: var(--accent-primary);"></div>
             </div>
             
             <div class="grid md:grid-cols-2 lg:grid-cols-2 gap-8">
                 <!-- Service 1 -->
-                <div class="service-card" data-aos="fade-up" data-aos-delay="100" style="background: #4A4A4A; border: 1px solid rgba(201, 160, 141, 0.2);">
-                    <div class="service-icon" style="background: linear-gradient(135deg, #C9A08D 0%, #4A4A4A 100%);">
+                <div class="service-card" data-aos="fade-up" data-aos-delay="100" style="background: var(--card-bg); border: 1px solid var(--border-color);">
+                    <div class="service-icon" style="background: linear-gradient(135deg, var(--accent-primary) 0%, var(--bg-secondary) 100%);">
                         <i class="fas fa-handshake"></i>
                     </div>
-                    <h3 class="service-title text-xl font-bold mb-4" style="color: #A89F96;">Développement Commercial & Prospection</h3>
+                    <h3 class="service-title text-xl font-bold mb-4" style="color: var(--text-tertiary);">Développement Commercial & Prospection</h3>
                     <ul class="service-list space-y-3">
-                        <li style="color: #A89F96; font-size: 1rem; line-height: 1.6; font-weight: 500;">Rédaction de devis, gestion des relances et suivi client</li>
-                        <li style="color: #A89F96; font-size: 1rem; line-height: 1.6; font-weight: 500;">Négociation de prestations et accompagnement jusqu'à la signature</li>
-                        <li style="color: #A89F96; font-size: 1rem; line-height: 1.6; font-weight: 500;">Prospection multicanal (phoning, e-mailing, LinkedIn)</li>
-                        <li style="color: #C9A08D; font-size: 1rem; line-height: 1.6; font-weight: 600;">Outils : HubSpot, Notion, Google Workspace</li>
+                        <li style="color: var(--text-tertiary); font-size: 1rem; line-height: 1.6; font-weight: 500;">Rédaction de devis, gestion des relances et suivi client</li>
+                        <li style="color: var(--text-tertiary); font-size: 1rem; line-height: 1.6; font-weight: 500;">Négociation de prestations et accompagnement jusqu'à la signature</li>
+                        <li style="color: var(--text-tertiary); font-size: 1rem; line-height: 1.6; font-weight: 500;">Prospection multicanal (phoning, e-mailing, LinkedIn)</li>
+                        <li style="color: var(--accent-primary); font-size: 1rem; line-height: 1.6; font-weight: 600;">Outils : HubSpot, Notion, Google Workspace</li>
                     </ul>
                 </div>
                 
                 <!-- Service 2 -->
-                <div class="service-card" data-aos="fade-up" data-aos-delay="200" style="background: #4A4A4A; border: 1px solid rgba(201, 160, 141, 0.2);">
-                    <div class="service-icon" style="background: linear-gradient(135deg, #C9A08D 0%, #4A4A4A 100%);">
+                <div class="service-card" data-aos="fade-up" data-aos-delay="200" style="background: var(--card-bg); border: 1px solid var(--border-color);">
+                    <div class="service-icon" style="background: linear-gradient(135deg, var(--accent-primary) 0%, var(--bg-secondary) 100%);">
                         <i class="fas fa-bullhorn"></i>
                     </div>
-                    <h3 class="service-title text-xl font-bold mb-4" style="color: #A89F96;">Communication Digitale & Réseaux Sociaux</h3>
+                    <h3 class="service-title text-xl font-bold mb-4" style="color: var(--text-tertiary);">Communication Digitale & Réseaux Sociaux</h3>
                     <ul class="service-list space-y-3">
-                        <li style="color: #A89F96; font-size: 1rem; line-height: 1.6; font-weight: 500;">Création de contenu (visuels, textes, animations)</li>
-                        <li style="color: #A89F96; font-size: 1rem; line-height: 1.6; font-weight: 500;">Planification et publication sur Instagram, Facebook, Google</li>
-                        <li style="color: #A89F96; font-size: 1rem; line-height: 1.6; font-weight: 500;">Suivi des KPI (engagement, conversion, visibilité)</li>
-                        <li style="color: #A89F96; font-size: 1rem; line-height: 1.6; font-weight: 500;">Animation de la communauté et gestion des retours clients</li>
+                        <li style="color: var(--text-tertiary); font-size: 1rem; line-height: 1.6; font-weight: 500;">Création de contenu (visuels, textes, animations)</li>
+                        <li style="color: var(--text-tertiary); font-size: 1rem; line-height: 1.6; font-weight: 500;">Planification et publication sur Instagram, Facebook, Google</li>
+                        <li style="color: var(--text-tertiary); font-size: 1rem; line-height: 1.6; font-weight: 500;">Suivi des KPI (engagement, conversion, visibilité)</li>
+                        <li style="color: var(--text-tertiary); font-size: 1rem; line-height: 1.6; font-weight: 500;">Animation de la communauté et gestion des retours clients</li>
                     </ul>
                 </div>
                 
                 <!-- Service 3 -->
-                <div class="service-card" data-aos="fade-up" data-aos-delay="300" style="background: #4A4A4A; border: 1px solid rgba(201, 160, 141, 0.2);">
-                    <div class="service-icon" style="background: linear-gradient(135deg, #C9A08D 0%, #4A4A4A 100%);">
+                <div class="service-card" data-aos="fade-up" data-aos-delay="300" style="background: var(--card-bg); border: 1px solid var(--border-color);">
+                    <div class="service-icon" style="background: linear-gradient(135deg, var(--accent-primary) 0%, var(--bg-secondary) 100%);">
                         <i class="fas fa-headset"></i>
                     </div>
-                    <h3 class="service-title text-xl font-bold mb-4" style="color: #A89F96;">Relation Client & Support Commercial</h3>
+                    <h3 class="service-title text-xl font-bold mb-4" style="color: var(--text-tertiary);">Relation Client & Support Commercial</h3>
                     <ul class="service-list space-y-3">
-                        <li style="color: #A89F96; font-size: 1rem; line-height: 1.6; font-weight: 500;">Réponse aux demandes clients et qualification des leads</li>
-                        <li style="color: #A89F96; font-size: 1rem; line-height: 1.6; font-weight: 500;">Coordination avec les équipes internes (logistique, fournisseurs)</li>
-                        <li style="color: #A89F96; font-size: 1rem; line-height: 1.6; font-weight: 500;">Préparation de présentations commerciales et supports de vente</li>
-                        <li style="color: #A89F96; font-size: 1rem; line-height: 1.6; font-weight: 500;">Mise à jour CRM et reporting d'activité</li>
+                        <li style="color: var(--text-tertiary); font-size: 1rem; line-height: 1.6; font-weight: 500;">Réponse aux demandes clients et qualification des leads</li>
+                        <li style="color: var(--text-tertiary); font-size: 1rem; line-height: 1.6; font-weight: 500;">Coordination avec les équipes internes (logistique, fournisseurs)</li>
+                        <li style="color: var(--text-tertiary); font-size: 1rem; line-height: 1.6; font-weight: 500;">Préparation de présentations commerciales et supports de vente</li>
+                        <li style="color: var(--text-tertiary); font-size: 1rem; line-height: 1.6; font-weight: 500;">Mise à jour CRM et reporting d'activité</li>
                     </ul>
                 </div>
                 
                 <!-- Service 4 -->
-                <div class="service-card" data-aos="fade-up" data-aos-delay="400" style="background: #4A4A4A; border: 1px solid rgba(201, 160, 141, 0.2);">
-                    <div class="service-icon" style="background: linear-gradient(135deg, #C9A08D 0%, #4A4A4A 100%);">
+                <div class="service-card" data-aos="fade-up" data-aos-delay="400" style="background: var(--card-bg); border: 1px solid var(--border-color);">
+                    <div class="service-icon" style="background: linear-gradient(135deg, var(--accent-primary) 0%, var(--bg-secondary) 100%);">
                         <i class="fas fa-project-diagram"></i>
                     </div>
-                    <h3 class="service-title text-xl font-bold mb-4" style="color: #A89F96;">Coordination de Projets</h3>
+                    <h3 class="service-title text-xl font-bold mb-4" style="color: var(--text-tertiary);">Coordination de Projets</h3>
                     <ul class="service-list space-y-3">
-                        <li style="color: #A89F96; font-size: 1rem; line-height: 1.6; font-weight: 500;">Suivi des campagnes commerciales et reporting</li>
-                        <li style="color: #A89F96; font-size: 1rem; line-height: 1.6; font-weight: 500;">Préparation aux salons et événements professionnels</li>
-                        <li style="color: #A89F96; font-size: 1rem; line-height: 1.6; font-weight: 500;">Collaboration transversale avec les interlocuteurs clés</li>
-                        <li style="color: #A89F96; font-size: 1rem; line-height: 1.6; font-weight: 500;">Analyse de performance et optimisation des actions</li>
+                        <li style="color: var(--text-tertiary); font-size: 1rem; line-height: 1.6; font-weight: 500;">Suivi des campagnes commerciales et reporting</li>
+                        <li style="color: var(--text-tertiary); font-size: 1rem; line-height: 1.6; font-weight: 500;">Préparation aux salons et événements professionnels</li>
+                        <li style="color: var(--text-tertiary); font-size: 1rem; line-height: 1.6; font-weight: 500;">Collaboration transversale avec les interlocuteurs clés</li>
+                        <li style="color: var(--text-tertiary); font-size: 1rem; line-height: 1.6; font-weight: 500;">Analyse de performance et optimisation des actions</li>
                     </ul>
                 </div>
             </div>
@@ -1385,40 +1587,40 @@
     </section>
 
     <!-- Experience & Education Section -->
-    <section id="experience" class="py-20" style="background-color: #4A4A4A;">
+    <section id="experience" class="py-20" style="background-color: var(--bg-secondary);">
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16" data-aos="fade-up">
-                <h2 class="text-3xl font-bold mb-4" style="color: #C9A08D;">Parcours Professionnel</h2>
-                <div class="w-20 h-1 mx-auto" style="background-color: #C9A08D;"></div>
+                <h2 class="text-3xl font-bold mb-4" style="color: var(--accent-primary);">Parcours Professionnel</h2>
+                <div class="w-20 h-1 mx-auto" style="background-color: var(--accent-primary);"></div>
             </div>
             
             <div class="grid md:grid-cols-2 gap-12">
                 <!-- Experience -->
                 <div data-aos="fade-right">
-                    <h3 class="text-2xl font-bold mb-8 flex items-center" style="color: #A89F96;">
-                        <i class="fas fa-briefcase mr-3" style="color: #C9A08D;"></i> Expériences
+                    <h3 class="text-2xl font-bold mb-8 flex items-center" style="color: var(--text-tertiary);">
+                        <i class="fas fa-briefcase mr-3" style="color: var(--accent-primary);"></i> Expériences
                     </h3>
                     
                     <div class="space-y-8">
                         <!-- Exp 1 -->
                         <div class="timeline-item">
-                            <div class="timeline-dot" style="background-color: #C9A08D;"></div>
-                            <div class="timeline-content" style="border-left: 2px solid rgba(201, 160, 141, 0.3);">
-                                <h4 class="text-xl font-bold" style="color: #A89F96;">Digital Waves – Lille</h4>
-                                <p style="color: #C9A08D;">Consultante Freelance – Social Media & Développement Commercial</p>
-                                <p class="mb-3" style="color: #A89F96;">Depuis 2024</p>
-                                <p class="mb-3" style="color: #A89F96;">
+                            <div class="timeline-dot" style="background-color: var(--accent-primary);"></div>
+                            <div class="timeline-content" style="border-left: 2px solid var(--border-color);">
+                                <h4 class="text-xl font-bold" style="color: var(--text-tertiary);">Digital Waves – Lille</h4>
+                                <p style="color: var(--accent-primary);">Consultante Freelance – Social Media & Développement Commercial</p>
+                                <p class="mb-3" style="color: var(--text-tertiary);">Depuis 2024</p>
+                                <p class="mb-3" style="color: var(--text-tertiary);">
                                     Fondatrice de ma micro-entreprise spécialisée en marketing digital, j'accompagne des entreprises locales (BTP, restauration) dans leur développement commercial et leur présence en ligne.
                                 </p>
                                 <div class="experience-card">
-                                    <div class="experience-header cursor-pointer flex items-center justify-between px-3 py-2" style="background-color: rgba(201, 160, 141, 0.1); border: 1px solid rgba(201, 160, 141, 0.2); border-radius: 0.75rem;">
-                                        <p class="font-medium m-0" style="color: #A89F96;">Missions clés</p>
-                                        <button class="expand-btn flex-shrink-0" data-target="exp1-details" style="background-color: #C9A08D; color: white; border: none; border-radius: 50%; width: 24px; height: 24px; display: flex; align-items: center; justify-content: center;">
+                                    <div class="experience-header cursor-pointer flex items-center justify-between px-3 py-2" style="background-color: rgba(201, 160, 141, 0.1); border: 1px solid var(--border-color); border-radius: 0.75rem;">
+                                        <p class="font-medium m-0" style="color: var(--text-tertiary);">Missions clés</p>
+                                        <button class="expand-btn flex-shrink-0" data-target="exp1-details" style="background-color: var(--accent-primary); color: white; border: none; border-radius: 50%; width: 24px; height: 24px; display: flex; align-items: center; justify-content: center;">
                                             <i class="fas fa-chevron-down"></i>
                                         </button>
                                     </div>
                                     <div id="exp1-details" class="experience-details">
-                                        <ul class="list-disc pl-5 space-y-1 mt-2" style="color: #A89F96;">
+                                        <ul class="list-disc pl-5 space-y-1 mt-2" style="color: var(--text-tertiary);">
                                             <li>Création et mise en œuvre de stratégies de communication digitale (Instagram, Facebook, Google)</li>
                                             <li>Prospection, rédaction de devis et négociation de prestations</li>
                                             <li>Gestion de la relation client et suivi des résultats (reporting & indicateurs de performance)</li>
@@ -1431,23 +1633,23 @@
                         
                         <!-- Exp 2 -->
                         <div class="timeline-item">
-                            <div class="timeline-dot" style="background-color: #C9A08D;"></div>
-                            <div class="timeline-content" style="border-left: 2px solid rgba(201, 160, 141, 0.3);">
-                                <h4 class="text-xl font-bold" style="color: #A89F96;">First Burger – Tourcoing</h4>
-                                <p style="color: #C9A08D;">Assistante de Gestion & Relation Client</p>
-                                <p class="mb-3" style="color: #A89F96;">2021 – 2022</p>
-                                <p class="mb-3" style="color: #A89F96;">
+                            <div class="timeline-dot" style="background-color: var(--accent-primary);"></div>
+                            <div class="timeline-content" style="border-left: 2px solid var(--border-color);">
+                                <h4 class="text-xl font-bold" style="color: var(--text-tertiary);">First Burger – Tourcoing</h4>
+                                <p style="color: var(--accent-primary);">Assistante de Gestion & Relation Client</p>
+                                <p class="mb-3" style="color: var(--text-tertiary);">2021 – 2022</p>
+                                <p class="mb-3" style="color: var(--text-tertiary);">
                                     Bras droit du manager, j'ai assuré le bon fonctionnement administratif et opérationnel de la structure.
                                 </p>
                                 <div class="experience-card">
-                                    <div class="experience-header cursor-pointer flex items-center justify-between px-3 py-2" style="background-color: rgba(201, 160, 141, 0.1); border: 1px solid rgba(201, 160, 141, 0.2); border-radius: 0.75rem;">
-                                        <p class="font-medium m-0" style="color: #A89F96;">Missions clés</p>
-                                        <button class="expand-btn flex-shrink-0" data-target="exp2-details" style="background-color: #C9A08D; color: white; border: none; border-radius: 50%; width: 24px; height: 24px; display: flex; align-items: center; justify-content: center;">
+                                    <div class="experience-header cursor-pointer flex items-center justify-between px-3 py-2" style="background-color: rgba(201, 160, 141, 0.1); border: 1px solid var(--border-color); border-radius: 0.75rem;">
+                                        <p class="font-medium m-0" style="color: var(--text-tertiary);">Missions clés</p>
+                                        <button class="expand-btn flex-shrink-0" data-target="exp2-details" style="background-color: var(--accent-primary); color: white; border: none; border-radius: 50%; width: 24px; height: 24px; display: flex; align-items: center; justify-content: center;">
                                             <i class="fas fa-chevron-down"></i>
                                         </button>
                                     </div>
                                     <div id="exp2-details" class="experience-details">
-                                        <ul class="list-disc pl-5 space-y-1 mt-2" style="color: #A89F96;">
+                                        <ul class="list-disc pl-5 space-y-1 mt-2" style="color: var(--text-tertiary);">
                                             <li>Planification et gestion d'une équipe de 8 personnes</li>
                                             <li>Suivi des commandes, gestion des fournisseurs et stocks</li>
                                             <li>Facturation, relance clients et organisation administrative quotidienne</li>
@@ -1460,23 +1662,23 @@
 
                         <!-- Exp 3 -->
                         <div class="timeline-item">
-                            <div class="timeline-dot" style="background-color: #C9A08D;"></div>
-                            <div class="timeline-content" style="border-left: 2px solid rgba(201, 160, 141, 0.3);">
-                                <h4 class="text-xl font-bold" style="color: #A89F96;">Nature & Progrès – Cambrai</h4>
-                                <p style="color: #C9A08D;">Assistante Administrative polyvalente</p>
-                                <p class="mb-3" style="color: #A89F96;">2017 – 2018</p>
-                                <p class="mb-3" style="color: #A89F96;">
+                            <div class="timeline-dot" style="background-color: var(--accent-primary);"></div>
+                            <div class="timeline-content" style="border-left: 2px solid var(--border-color);">
+                                <h4 class="text-xl font-bold" style="color: var(--text-tertiary);">Nature & Progrès – Cambrai</h4>
+                                <p style="color: var(--accent-primary);">Assistante Administrative polyvalente</p>
+                                <p class="mb-3" style="color: var(--text-tertiary);">2017 – 2018</p>
+                                <p class="mb-3" style="color: var(--text-tertiary);">
                                     Soutien administratif au sein d'une association engagée, dans un rôle transversal.
                                 </p>
                                 <div class="experience-card">
-                                    <div class="experience-header cursor-pointer flex items-center justify-between px-3 py-2" style="background-color: rgba(201, 160, 141, 0.1); border: 1px solid rgba(201, 160, 141, 0.2); border-radius: 0.75rem;">
-                                        <p class="font-medium m-0" style="color: #A89F96;">Missions clés</p>
-                                        <button class="expand-btn flex-shrink-0" data-target="exp3-details" style="background-color: #C9A08D; color: white; border: none; border-radius: 50%; width: 24px; height: 24px; display: flex; align-items: center; justify-content: center;">
+                                    <div class="experience-header cursor-pointer flex items-center justify-between px-3 py-2" style="background-color: rgba(201, 160, 141, 0.1); border: 1px solid var(--border-color); border-radius: 0.75rem;">
+                                        <p class="font-medium m-0" style="color: var(--text-tertiary);">Missions clés</p>
+                                        <button class="expand-btn flex-shrink-0" data-target="exp3-details" style="background-color: var(--accent-primary); color: white; border: none; border-radius: 50%; width: 24px; height: 24px; display: flex; align-items: center; justify-content: center;">
                                             <i class="fas fa-chevron-down"></i>
                                         </button>
                                     </div>
                                     <div id="exp3-details" class="experience-details">
-                                        <ul class="list-disc pl-5 space-y-1 mt-2" style="color: #A89F96;">
+                                        <ul class="list-disc pl-5 space-y-1 mt-2" style="color: var(--text-tertiary);">
                                             <li>Accueil physique et téléphonique, gestion d'agendas</li>
                                             <li>Suivi logistique d'événements et rédaction de documents internes</li>
                                             <li>Classement, archivage, gestion du courrier</li>
@@ -1488,23 +1690,23 @@
                         
                         <!-- Exp 4 -->
                         <div class="timeline-item">
-                            <div class="timeline-dot" style="background-color: #C9A08D;"></div>
-                            <div class="timeline-content" style="border-left: 2px solid rgba(201, 160, 141, 0.3);">
-                                <h4 class="text-xl font-bold" style="color: #A89F96;">Indigo (Groupe Laahrichi) – Meknès</h4>
-                                <p style="color: #C9A08D;">Assistante Commerciale Immobilier</p>
-                                <p class="mb-3" style="color: #A89F96;">2017</p>
-                                <p class="mb-3" style="color: #A89F96;">
+                            <div class="timeline-dot" style="background-color: var(--accent-primary);"></div>
+                            <div class="timeline-content" style="border-left: 2px solid var(--border-color);">
+                                <h4 class="text-xl font-bold" style="color: var(--text-tertiary);">Indigo (Groupe Laahrichi) – Meknès</h4>
+                                <p style="color: var(--accent-primary);">Assistante Commerciale Immobilier</p>
+                                <p class="mb-3" style="color: var(--text-tertiary);">2017</p>
+                                <p class="mb-3" style="color: var(--text-tertiary);">
                                     Au sein d'un groupe immobilier, j'ai accompagné les clients dans leur parcours d'achat, depuis la visite jusqu'à la signature.
                                 </p>
                                 <div class="experience-card">
-                                    <div class="experience-header cursor-pointer flex items-center justify-between px-3 py-2" style="background-color: rgba(201, 160, 141, 0.1); border: 1px solid rgba(201, 160, 141, 0.2); border-radius: 0.75rem;">
-                                        <p class="font-medium m-0" style="color: #A89F96;">Missions clés</p>
-                                        <button class="expand-btn flex-shrink-0" data-target="exp4-details" style="background-color: #C9A08D; color: white; border: none; border-radius: 50%; width: 24px; height: 24px; display: flex; align-items: center; justify-content: center;">
+                                    <div class="experience-header cursor-pointer flex items-center justify-between px-3 py-2" style="background-color: rgba(201, 160, 141, 0.1); border: 1px solid var(--border-color); border-radius: 0.75rem;">
+                                        <p class="font-medium m-0" style="color: var(--text-tertiary);">Missions clés</p>
+                                        <button class="expand-btn flex-shrink-0" data-target="exp4-details" style="background-color: var(--accent-primary); color: white; border: none; border-radius: 50%; width: 24px; height: 24px; display: flex; align-items: center; justify-content: center;">
                                             <i class="fas fa-chevron-down"></i>
                                         </button>
                                     </div>
                                     <div id="exp4-details" class="experience-details">
-                                        <ul class="list-disc pl-5 space-y-1 mt-2" style="color: #A89F96;">
+                                        <ul class="list-disc pl-5 space-y-1 mt-2" style="color: var(--text-tertiary);">
                                             <li>Accueil et orientation client, élaboration des devis et relances</li>
                                             <li>Présentation d'un appartement témoin et mise en valeur des offres</li>
                                             <li>Traitement administratif des dossiers de vente</li>
@@ -1518,18 +1720,18 @@
                 
                 <!-- Education -->
                 <div data-aos="fade-up">
-                    <h3 class="text-2xl font-bold mb-8 flex items-center" style="color: #A89F96;">
-                        <i class="fas fa-graduation-cap mr-3" style="color: #C9A08D;"></i> Formation
+                    <h3 class="text-2xl font-bold mb-8 flex items-center" style="color: var(--text-tertiary);">
+                        <i class="fas fa-graduation-cap mr-3" style="color: var(--accent-primary);"></i> Formation
                     </h3>
                     
                     <div class="space-y-8">
                         <!-- Edu 1 -->
                         <div class="timeline-item">
-                            <div class="timeline-dot" style="background-color: #C9A08D;"></div>
-                            <div class="timeline-content" style="border-left: 2px solid rgba(201, 160, 141, 0.3);">
-                                <h4 class="text-xl font-bold" style="color: #A89F96;">Licence Professionnelle – Management & Gestion des Organisations</h4>
-                                <p style="color: #C9A08D;">Université de Lille</p>
-                                <p class="mb-3" style="color: #A89F96;">2021</p>
+                            <div class="timeline-dot" style="background-color: var(--accent-primary);"></div>
+                            <div class="timeline-content" style="border-left: 2px solid var(--border-color);">
+                                <h4 class="text-xl font-bold" style="color: var(--text-tertiary);">Licence Professionnelle – Management & Gestion des Organisations</h4>
+                                <p style="color: var(--accent-primary);">Université de Lille</p>
+                                <p class="mb-3" style="color: var(--text-tertiary);">2021</p>
                                 <div class="experience-card">
                                     <div class="experience-header cursor-pointer flex items-center justify-between px-3 py-2" style="background-color: rgba(201, 160, 141, 0.1); border: 1px solid rgba(201, 160, 141, 0.2); border-radius: 0.75rem;">
                                         <p class="font-medium m-0" style="color: #A89F96;">Détails de la formation</p>
@@ -1615,123 +1817,123 @@
     </section>
 
     <!-- Skills Section -->
-    <section id="skills" class="py-20" style="background: linear-gradient(to bottom, #4A4A4A 0%, #6B6B6B 100%);">
+    <section id="skills" class="py-20" style="background: linear-gradient(to bottom, var(--bg-secondary) 0%, var(--bg-tertiary) 100%);">
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16" data-aos="fade-up">
-                <h2 class="text-3xl font-bold mb-4" style="color: #C9A08D;">Compétences</h2>
-                <p class="max-w-2xl mx-auto text-lg font-medium" style="color: #B8B8B8;">Un ensemble de compétences techniques et humaines développées au fil de mes expériences professionnelles.</p>
-                <div class="w-20 h-1 mx-auto mt-4" style="background-color: #C9A08D;"></div>
+                <h2 class="text-3xl font-bold mb-4" style="color: var(--accent-primary);">Compétences</h2>
+                <p class="max-w-2xl mx-auto text-lg font-medium" style="color: var(--text-secondary);">Un ensemble de compétences techniques et humaines développées au fil de mes expériences professionnelles.</p>
+                <div class="w-20 h-1 mx-auto mt-4" style="background-color: var(--accent-primary);"></div>
             </div>
             
             <div class="grid md:grid-cols-2 gap-12">
                 <!-- Technical Skills -->
                 <div data-aos="fade-right">
-                    <div class="rounded-2xl p-8 shadow-sm" style="background: #4A4A4A; border: 1px solid rgba(201, 160, 141, 0.2);">
-                        <h3 class="text-2xl font-bold mb-8 flex items-center" style="color: #A89F96;">
-                            <i class="fas fa-cogs mr-3" style="color: #C9A08D;"></i>
+                    <div class="rounded-2xl p-8 shadow-sm" style="background: var(--card-bg); border: 1px solid var(--border-color);">
+                        <h3 class="text-2xl font-bold mb-8 flex items-center" style="color: var(--text-tertiary);">
+                            <i class="fas fa-cogs mr-3" style="color: var(--accent-primary);"></i>
                             Compétences Techniques
                         </h3>
                         
                     <div class="space-y-6">
                             <!-- Skill Card 1 -->
-                            <div class="rounded-xl skill-card" style="background: #4A4A4A; border: 1px solid rgba(201, 160, 141, 0.2);">
+                            <div class="rounded-xl skill-card" style="background: var(--card-bg); border: 1px solid var(--border-color);">
                                 <div class="skill-header">
                                     <div class="skill-icon">
-                                        <div class="p-3 rounded-lg" style="background: rgba(201, 160, 141, 0.2);">
-                                            <i class="fas fa-file-invoice text-xl" style="color: #C9A08D;"></i>
+                                        <div class="p-3 rounded-lg" style="background: rgba(179, 135, 120, 0.15);">
+                                            <i class="fas fa-file-invoice text-xl" style="color: var(--accent-primary);"></i>
                                         </div>
                                     </div>
-                                    <h4 class="font-semibold skill-title" style="color: #A89F96;">Gestion Commerciale & Administrative</h4>
-                                    <button class="expand-btn" data-target="admin-details" style="background: linear-gradient(135deg, #C9A08D 0%, #4A4A4A 100%); color: white; border: none; border-radius: 50%; width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 8px rgba(201, 160, 141, 0.2);">
+                                    <h4 class="font-semibold skill-title" style="color: var(--text-tertiary);">Gestion Commerciale & Administrative</h4>
+                                    <button class="expand-btn" data-target="admin-details" style="background: linear-gradient(135deg, var(--accent-primary) 0%, var(--bg-secondary) 100%); color: white; border: none; border-radius: 50%; width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 8px var(--shadow);">
                                         <i class="fas fa-plus"></i>
                                     </button>
                                 </div>
                                 <div id="admin-details" class="skill-details">
-                                    <p style="color: #A89F96; line-height: 1.6;">
+                                    <p style="color: var(--text-tertiary); line-height: 1.6;">
                                         Maîtrisée dans mes postes chez First Burger et Indigo : suivi de dossiers clients, traitement administratif, gestion des devis et des relances.
                                     </p>
                                 </div>
                             </div>
 
                             <!-- Skill Card 2 -->
-                            <div class="rounded-xl skill-card" style="background: #4A4A4A; border: 1px solid rgba(201, 160, 141, 0.2);">
+                            <div class="rounded-xl skill-card" style="background: var(--card-bg); border: 1px solid var(--border-color);">
                                 <div class="skill-header">
                                     <div class="skill-icon">
-                                        <div class="p-3 rounded-lg" style="background: rgba(201, 160, 141, 0.2);">
-                                            <i class="fas fa-handshake text-xl" style="color: #C9A08D;"></i>
+                                        <div class="p-3 rounded-lg" style="background: rgba(179, 135, 120, 0.15);">
+                                            <i class="fas fa-handshake text-xl" style="color: var(--accent-primary);"></i>
                                         </div>
                                     </div>
-                                    <h4 class="font-semibold skill-title" style="color: #A89F96;">Développement Commercial</h4>
-                                    <button class="expand-btn" data-target="commercial-details" style="background: linear-gradient(135deg, #C9A08D 0%, #4A4A4A 100%); color: white; border: none; border-radius: 50%; width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 8px rgba(201, 160, 141, 0.2);">
+                                    <h4 class="font-semibold skill-title" style="color: var(--text-tertiary);">Développement Commercial</h4>
+                                    <button class="expand-btn" data-target="commercial-details" style="background: linear-gradient(135deg, var(--accent-primary) 0%, var(--bg-secondary) 100%); color: white; border: none; border-radius: 50%; width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 8px var(--shadow);">
                                         <i class="fas fa-plus"></i>
                                     </button>
                                 </div>
                                 <div id="commercial-details" class="skill-details">
-                                    <p style="color: #A89F96; line-height: 1.6;">
+                                    <p style="color: var(--text-tertiary); line-height: 1.6;">
                                         Expérience en prospection, négociation, suivi client et reporting dans le cadre de ma micro-entreprise Digital Waves et de prestations freelance B2B.
                                     </p>
                                 </div>
                             </div>
 
                             <!-- Skill Card 3 -->
-                            <div class="rounded-xl skill-card" style="background: #4A4A4A; border: 1px solid rgba(201, 160, 141, 0.2);">
+                            <div class="rounded-xl skill-card" style="background: var(--card-bg); border: 1px solid var(--border-color);">
                                 <div class="skill-header">
                                     <div class="skill-icon">
-                                        <div class="p-3 rounded-lg" style="background: rgba(201, 160, 141, 0.2);">
-                                            <i class="fas fa-chart-bar text-xl" style="color: #C9A08D;"></i>
+                                        <div class="p-3 rounded-lg" style="background: rgba(179, 135, 120, 0.15);">
+                                            <i class="fas fa-chart-bar text-xl" style="color: var(--accent-primary);"></i>
                                         </div>
                                     </div>
-                                    <h4 class="font-semibold skill-title" style="color: #A89F96;">Analyse & Reporting</h4>
-                                    <button class="expand-btn" data-target="analysis-details" style="background: linear-gradient(135deg, #C9A08D 0%, #4A4A4A 100%); color: white; border: none; border-radius: 50%; width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 8px rgba(201, 160, 141, 0.2);">
+                                    <h4 class="font-semibold skill-title" style="color: var(--text-tertiary);">Analyse & Reporting</h4>
+                                    <button class="expand-btn" data-target="analysis-details" style="background: linear-gradient(135deg, var(--accent-primary) 0%, var(--bg-secondary) 100%); color: white; border: none; border-radius: 50%; width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 8px var(--shadow);">
                                         <i class="fas fa-plus"></i>
                                     </button>
                                 </div>
                                 <div id="analysis-details" class="skill-details">
-                                    <p style="color: #A89F96; line-height: 1.6;">
+                                    <p style="color: var(--text-tertiary); line-height: 1.6;">
                                         Création de tableaux de bord (Google Sheets / Excel), analyse des résultats commerciaux et suivi des KPI pour optimiser les actions marketing & ventes.
                                     </p>
                                 </div>
                         </div>
 
                             <!-- Skill Card 4 -->
-                            <div class="rounded-xl skill-card" style="background: #4A4A4A; border: 1px solid rgba(201, 160, 141, 0.2);">
+                            <div class="rounded-xl skill-card" style="background: var(--card-bg); border: 1px solid var(--border-color);">
                                 <div class="skill-header">
                                     <div class="skill-icon">
-                                        <div class="p-3 rounded-lg" style="background: rgba(201, 160, 141, 0.2);">
-                                            <i class="fas fa-tasks text-xl" style="color: #C9A08D;"></i>
+                                        <div class="p-3 rounded-lg" style="background: rgba(179, 135, 120, 0.15);">
+                                            <i class="fas fa-tasks text-xl" style="color: var(--accent-primary);"></i>
                             </div>
                             </div>
-                                    <h4 class="font-semibold skill-title" style="color: #A89F96;">Organisation & Gestion de Projets</h4>
-                                    <button class="expand-btn" data-target="organization-details" style="background: linear-gradient(135deg, #C9A08D 0%, #4A4A4A 100%); color: white; border: none; border-radius: 50%; width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 8px rgba(201, 160, 141, 0.2);">
+                                    <h4 class="font-semibold skill-title" style="color: var(--text-tertiary);">Organisation & Gestion de Projets</h4>
+                                    <button class="expand-btn" data-target="organization-details" style="background: linear-gradient(135deg, var(--accent-primary) 0%, var(--bg-secondary) 100%); color: white; border: none; border-radius: 50%; width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 8px var(--shadow);">
                                         <i class="fas fa-plus"></i>
                                     </button>
                                 </div>
                                 <div id="organization-details" class="skill-details">
-                                    <p style="color: #A89F96; line-height: 1.6;">
+                                    <p style="color: var(--text-tertiary); line-height: 1.6;">
                                         Coordination de missions freelance, suivi de production de contenus et d'actions commerciales de A à Z. Compétences développées en autonomie.
                                     </p>
                                 </div>
                             </div>
 
                             <!-- Skill Card 5 -->
-                            <div class="rounded-xl skill-card" style="background: #4A4A4A; border: 1px solid rgba(201, 160, 141, 0.2);">
+                            <div class="rounded-xl skill-card" style="background: var(--card-bg); border: 1px solid var(--border-color);">
                                 <div class="skill-header">
                                     <div class="skill-icon">
-                                        <div class="p-3 rounded-lg" style="background: rgba(201, 160, 141, 0.2);">
-                                            <i class="fas fa-laptop-code text-xl" style="color: #C9A08D;"></i>
+                                        <div class="p-3 rounded-lg" style="background: rgba(179, 135, 120, 0.15);">
+                                            <i class="fas fa-laptop-code text-xl" style="color: var(--accent-primary);"></i>
                             </div>
                             </div>
-                                    <h4 class="font-semibold skill-title" style="color: #A89F96;">Outils Digitaux & CRM</h4>
-                                    <button class="expand-btn" data-target="tools-details" style="background: linear-gradient(135deg, #C9A08D 0%, #4A4A4A 100%); color: white; border: none; border-radius: 50%; width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 8px rgba(201, 160, 141, 0.2);">
+                                    <h4 class="font-semibold skill-title" style="color: var(--text-tertiary);">Outils Digitaux & CRM</h4>
+                                    <button class="expand-btn" data-target="tools-details" style="background: linear-gradient(135deg, var(--accent-primary) 0%, var(--bg-secondary) 100%); color: white; border: none; border-radius: 50%; width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 8px var(--shadow);">
                                         <i class="fas fa-plus"></i>
                                     </button>
                                 </div>
                                 <div id="tools-details" class="skill-details">
-                                    <p style="color: #A89F96; line-height: 1.6;"><strong style="color: #C9A08D;">Bonne maîtrise de :</strong></p>
+                                    <p style="color: var(--text-tertiary); line-height: 1.6;"><strong style="color: var(--accent-primary);">Bonne maîtrise de :</strong></p>
                                     <ul class="mt-2 space-y-1">
-                                        <li style="color: #A89F96;">Notion, Excel, Canva, Google Workspace</li>
-                                        <li style="color: #A89F96;">Utilisation d'ERP/CRM pour gestion clients, devis et communication</li>
-                                        <li style="color: #A89F96;">Réseaux sociaux (Meta Suite, Instagram, Facebook, Google My Business)</li>
+                                        <li style="color: var(--text-tertiary);">Notion, Excel, Canva, Google Workspace</li>
+                                        <li style="color: var(--text-tertiary);">Utilisation d'ERP/CRM pour gestion clients, devis et communication</li>
+                                        <li style="color: var(--text-tertiary);">Réseaux sociaux (Meta Suite, Instagram, Facebook, Google My Business)</li>
                                     </ul>
                                 </div>
                             </div>
@@ -1741,88 +1943,88 @@
 
                 <!-- Soft Skills -->
                 <div data-aos="fade-down">
-                    <div class="rounded-2xl p-8 shadow-sm" style="background: #4A4A4A; border: 1px solid rgba(201, 160, 141, 0.2);">
-                        <h3 class="text-2xl font-bold mb-8 flex items-center" style="color: #A89F96;">
-                            <i class="fas fa-users mr-3" style="color: #C9A08D;"></i>
+                    <div class="rounded-2xl p-8 shadow-sm" style="background: var(--card-bg); border: 1px solid var(--border-color);">
+                        <h3 class="text-2xl font-bold mb-8 flex items-center" style="color: var(--text-tertiary);">
+                            <i class="fas fa-users mr-3" style="color: var(--accent-primary);"></i>
                             Compétences Humaines
                         </h3>
 
                         <div class="space-y-6">
                             <!-- Skill Card 1 -->
-                            <div class="rounded-xl skill-card" style="background: #4A4A4A; border: 1px solid rgba(201, 160, 141, 0.2);">
+                            <div class="rounded-xl skill-card" style="background: var(--card-bg); border: 1px solid var(--border-color);">
                                 <div class="skill-header">
                                     <div class="skill-icon">
-                                        <div class="p-3 rounded-lg" style="background: rgba(201, 160, 141, 0.2);">
-                                            <i class="fas fa-comments text-xl" style="color: #C9A08D;"></i>
+                                        <div class="p-3 rounded-lg" style="background: rgba(179, 135, 120, 0.15);">
+                                            <i class="fas fa-comments text-xl" style="color: var(--accent-primary);"></i>
                                         </div>
                                     </div>
-                                    <h4 class="font-semibold skill-title" style="color: #A89F96;">Communication Professionnelle</h4>
-                                    <button class="expand-btn" data-target="communication-details" style="background: linear-gradient(135deg, #C9A08D 0%, #4A4A4A 100%); color: white; border: none; border-radius: 50%; width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 8px rgba(201, 160, 141, 0.2);">
+                                    <h4 class="font-semibold skill-title" style="color: var(--text-tertiary);">Communication Professionnelle</h4>
+                                    <button class="expand-btn" data-target="communication-details" style="background: linear-gradient(135deg, var(--accent-primary) 0%, var(--bg-secondary) 100%); color: white; border: none; border-radius: 50%; width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 8px var(--shadow);">
                                         <i class="fas fa-plus"></i>
                                     </button>
                                 </div>
                                 <div id="communication-details" class="skill-details">
-                                    <p style="color: #A89F96; line-height: 1.6;">
+                                    <p style="color: var(--text-tertiary); line-height: 1.6;">
                                         Affinée à travers les échanges clients/fournisseurs, la rédaction de contenus digitaux, les présentations commerciales et les réponses aux demandes entrantes.
                                     </p>
                                 </div>
                             </div>
                             
                             <!-- Skill Card 2 -->
-                            <div class="rounded-xl skill-card" style="background: #4A4A4A; border: 1px solid rgba(201, 160, 141, 0.2);">
+                            <div class="rounded-xl skill-card" style="background: var(--card-bg); border: 1px solid var(--border-color);">
                                 <div class="skill-header">
                                     <div class="skill-icon">
-                                        <div class="p-3 rounded-lg" style="background: rgba(201, 160, 141, 0.2);">
-                                            <i class="fas fa-handshake text-xl" style="color: #C9A08D;"></i>
+                                        <div class="p-3 rounded-lg" style="background: rgba(179, 135, 120, 0.15);">
+                                            <i class="fas fa-handshake text-xl" style="color: var(--accent-primary);"></i>
                                         </div>
                                     </div>
-                                    <h4 class="font-semibold skill-title" style="color: #A89F96;">Relation Client & Sens du service</h4>
-                                    <button class="expand-btn" data-target="client-details" style="background: linear-gradient(135deg, #C9A08D 0%, #4A4A4A 100%); color: white; border: none; border-radius: 50%; width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 8px rgba(201, 160, 141, 0.2);">
+                                    <h4 class="font-semibold skill-title" style="color: var(--text-tertiary);">Relation Client & Sens du service</h4>
+                                    <button class="expand-btn" data-target="client-details" style="background: linear-gradient(135deg, var(--accent-primary) 0%, var(--bg-secondary) 100%); color: white; border: none; border-radius: 50%; width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 8px var(--shadow);">
                                         <i class="fas fa-plus"></i>
                                     </button>
                                 </div>
                                 <div id="client-details" class="skill-details">
-                                    <p style="color: #A89F96; line-height: 1.6;">
+                                    <p style="color: var(--text-tertiary); line-height: 1.6;">
                                         Solide expérience dans l'accompagnement client (restauration, immobilier, prestations freelance), avec un haut niveau d'écoute, de réactivité et de suivi.
                                     </p>
                                 </div>
                         </div>
 
                             <!-- Skill Card 3 -->
-                            <div class="rounded-xl skill-card" style="background: #4A4A4A; border: 1px solid rgba(201, 160, 141, 0.2);">
+                            <div class="rounded-xl skill-card" style="background: var(--card-bg); border: 1px solid var(--border-color);">
                                 <div class="skill-header">
                                     <div class="skill-icon">
-                                        <div class="p-3 rounded-lg" style="background: rgba(201, 160, 141, 0.2);">
-                                            <i class="fas fa-user-check text-xl" style="color: #C9A08D;"></i>
+                                        <div class="p-3 rounded-lg" style="background: rgba(179, 135, 120, 0.15);">
+                                            <i class="fas fa-user-check text-xl" style="color: var(--accent-primary);"></i>
                                         </div>
                                     </div>
-                                    <h4 class="font-semibold skill-title" style="color: #A89F96;">Autonomie & Prise d'initiative</h4>
-                                    <button class="expand-btn" data-target="autonomie-details" style="background: linear-gradient(135deg, #C9A08D 0%, #4A4A4A 100%); color: white; border: none; border-radius: 50%; width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 8px rgba(201, 160, 141, 0.2);">
+                                    <h4 class="font-semibold skill-title" style="color: var(--text-tertiary);">Autonomie & Prise d'initiative</h4>
+                                    <button class="expand-btn" data-target="autonomie-details" style="background: linear-gradient(135deg, var(--accent-primary) 0%, var(--bg-secondary) 100%); color: white; border: none; border-radius: 50%; width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 8px var(--shadow);">
                                         <i class="fas fa-plus"></i>
                                     </button>
                                 </div>
                                 <div id="autonomie-details" class="skill-details">
-                                    <p style="color: #A89F96; line-height: 1.6;">
+                                    <p style="color: var(--text-tertiary); line-height: 1.6;">
                                         Développée en tant que freelance : gestion complète des projets, priorisation, organisation quotidienne et adaptation rapide à chaque mission.
                                     </p>
                                 </div>
                             </div>
 
                             <!-- Skill Card 4 -->
-                            <div class="rounded-xl skill-card" style="background: #4A4A4A; border: 1px solid rgba(201, 160, 141, 0.2);">
+                            <div class="rounded-xl skill-card" style="background: var(--card-bg); border: 1px solid var(--border-color);">
                                 <div class="skill-header">
                                     <div class="skill-icon">
-                                        <div class="p-3 rounded-lg" style="background: rgba(201, 160, 141, 0.2);">
-                                            <i class="fas fa-check-double text-xl" style="color: #C9A08D;"></i>
+                                        <div class="p-3 rounded-lg" style="background: rgba(179, 135, 120, 0.15);">
+                                            <i class="fas fa-check-double text-xl" style="color: var(--accent-primary);"></i>
                                         </div>
                                     </div>
-                                    <h4 class="font-semibold skill-title" style="color: #A89F96;">Rigueur & Fiabilité</h4>
-                                    <button class="expand-btn" data-target="rigueur-details" style="background: linear-gradient(135deg, #C9A08D 0%, #4A4A4A 100%); color: white; border: none; border-radius: 50%; width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 8px rgba(201, 160, 141, 0.2);">
+                                    <h4 class="font-semibold skill-title" style="color: var(--text-tertiary);">Rigueur & Fiabilité</h4>
+                                    <button class="expand-btn" data-target="rigueur-details" style="background: linear-gradient(135deg, var(--accent-primary) 0%, var(--bg-secondary) 100%); color: white; border: none; border-radius: 50%; width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 8px var(--shadow);">
                                         <i class="fas fa-plus"></i>
                                     </button>
                                 </div>
                                 <div id="rigueur-details" class="skill-details">
-                                    <p style="color: #A89F96; line-height: 1.6;">
+                                    <p style="color: var(--text-tertiary); line-height: 1.6;">
                                         Exigée dans toutes mes expériences : tenue des délais, exactitude des données clients, respect des procédures et suivi de la facturation.
                                     </p>
                                 </div>
@@ -1835,95 +2037,95 @@
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="py-20" style="background: linear-gradient(to bottom, #6B6B6B 0%, #4A4A4A 100%);">
+    <section id="contact" class="py-20" style="background: linear-gradient(to bottom, var(--bg-tertiary) 0%, var(--bg-secondary) 100%);">
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16" data-aos="fade-up">
-                <h2 class="text-4xl font-bold mb-4" style="color: #C9A08D;">Contactez-moi</h2>
-                <p class="max-w-2xl mx-auto" style="color: #A89F96;">Disponible pour des missions en freelance ou un CDI dans la région lilloise.</p>
-                <div class="w-24 h-1 mx-auto mt-4" style="background-color: #C9A08D;"></div>
+                <h2 class="text-4xl font-bold mb-4" style="color: var(--accent-primary);">Contactez-moi</h2>
+                <p class="max-w-2xl mx-auto" style="color: var(--text-tertiary);">Disponible pour des missions en freelance ou un CDI dans la région lilloise.</p>
+                <div class="w-24 h-1 mx-auto mt-4" style="background-color: var(--accent-primary);"></div>
             </div>
             
             <div class="flex flex-col md:flex-row gap-8">
                 <div class="md:w-1/2" data-aos="fade-right">
-                    <div class="rounded-2xl p-8 h-full shadow-sm hover:shadow-md transition-all duration-300" style="background: #4A4A4A; border: 1px solid rgba(201, 160, 141, 0.2);">
-                        <h3 class="text-2xl font-bold mb-8 flex items-center" style="color: #A89F96;">
-                            <i class="fas fa-address-card mr-3" style="color: #C9A08D;"></i>
+                    <div class="rounded-2xl p-8 h-full shadow-sm hover:shadow-md transition-all duration-300" style="background: var(--card-bg); border: 1px solid var(--border-color);">
+                        <h3 class="text-2xl font-bold mb-8 flex items-center" style="color: var(--text-tertiary);">
+                            <i class="fas fa-address-card mr-3" style="color: var(--accent-primary);"></i>
                             Coordonnées
                         </h3>
                         
                         <div class="space-y-6">
                             <div class="flex items-start group">
-                                <div class="p-4 rounded-xl mr-4 transition-colors duration-300" style="background: rgba(201, 160, 141, 0.1);">
-                                    <i class="fas fa-envelope text-xl" style="color: #C9A08D;"></i>
+                                <div class="p-4 rounded-xl mr-4 transition-colors duration-300" style="background: rgba(179, 135, 120, 0.1);">
+                                    <i class="fas fa-envelope text-xl" style="color: var(--accent-primary);"></i>
                                 </div>
                                 <div>
-                                    <h4 class="font-semibold mb-1" style="color: #A89F96;">Email</h4>
-                                    <p class="transition-colors duration-300" style="color: #A89F96;">imanezerouali0@gmail.com</p>
+                                    <h4 class="font-semibold mb-1" style="color: var(--text-tertiary);">Email</h4>
+                                    <p class="transition-colors duration-300" style="color: var(--text-tertiary);">imanezerouali0@gmail.com</p>
                                 </div>
                             </div>
                             
                             <div class="flex items-start group">
-                                <div class="p-4 rounded-xl mr-4 transition-colors duration-300" style="background: rgba(201, 160, 141, 0.1);">
-                                    <i class="fas fa-phone-alt text-xl" style="color: #C9A08D;"></i>
+                                <div class="p-4 rounded-xl mr-4 transition-colors duration-300" style="background: rgba(179, 135, 120, 0.1);">
+                                    <i class="fas fa-phone-alt text-xl" style="color: var(--accent-primary);"></i>
                                 </div>
                                 <div>
-                                    <h4 class="font-semibold mb-1" style="color: #A89F96;">Téléphone</h4>
-                                    <p class="transition-colors duration-300" style="color: #A89F96;">06 79 10 08 52</p>
+                                    <h4 class="font-semibold mb-1" style="color: var(--text-tertiary);">Téléphone</h4>
+                                    <p class="transition-colors duration-300" style="color: var(--text-tertiary);">06 79 10 08 52</p>
                             </div>
                         </div>
 
                             <div class="flex items-start group">
-                                <div class="p-4 rounded-xl mr-4 transition-colors duration-300" style="background: rgba(201, 160, 141, 0.1);">
-                                    <i class="fab fa-linkedin-in text-xl" style="color: #C9A08D;"></i>
+                                <div class="p-4 rounded-xl mr-4 transition-colors duration-300" style="background: rgba(179, 135, 120, 0.1);">
+                                    <i class="fab fa-linkedin-in text-xl" style="color: var(--accent-primary);"></i>
                                 </div>
                                 <div>
-                                    <h4 class="font-semibold mb-1" style="color: #A89F96;">LinkedIn</h4>
-                                    <p class="transition-colors duration-300" style="color: #A89F96;">Imaane Zerouali</p>
+                                    <h4 class="font-semibold mb-1" style="color: var(--text-tertiary);">LinkedIn</h4>
+                                    <p class="transition-colors duration-300" style="color: var(--text-tertiary);">Imaane Zerouali</p>
                             </div>
                         </div>
 
                             <div class="flex items-start group">
-                                <div class="p-4 rounded-xl mr-4 transition-colors duration-300" style="background: rgba(201, 160, 141, 0.1);">
-                                    <i class="fas fa-map-marker-alt text-xl" style="color: #C9A08D;"></i>
+                                <div class="p-4 rounded-xl mr-4 transition-colors duration-300" style="background: rgba(179, 135, 120, 0.1);">
+                                    <i class="fas fa-map-marker-alt text-xl" style="color: var(--accent-primary);"></i>
                             </div>
                                 <div>
-                                    <h4 class="font-semibold mb-1" style="color: #A89F96;">Zone d'intervention</h4>
-                                    <p class="transition-colors duration-300" style="color: #A89F96;">Lille et sa métropole</p>
+                                    <h4 class="font-semibold mb-1" style="color: var(--text-tertiary);">Zone d'intervention</h4>
+                                    <p class="transition-colors duration-300" style="color: var(--text-tertiary);">Lille et sa métropole</p>
                         </div>
                     </div>
                 </div>
                         
-                        <div class="mt-8 p-6 rounded-xl" style="background: rgba(201, 160, 141, 0.1);">
-                            <h4 class="font-semibold mb-2 flex items-center" style="color: #A89F96;">
-                                <i class="fas fa-clock mr-2" style="color: #C9A08D;"></i>
+                        <div class="mt-8 p-6 rounded-xl" style="background: rgba(179, 135, 120, 0.08);">
+                            <h4 class="font-semibold mb-2 flex items-center" style="color: var(--text-tertiary);">
+                                <i class="fas fa-clock mr-2" style="color: var(--accent-primary);"></i>
                                 Disponibilités
                             </h4>
-                            <p style="color: #A89F96;">En recherche active pour un CDI ou des missions freelance.</p>
+                            <p style="color: var(--text-tertiary);">En recherche active pour un CDI ou des missions freelance.</p>
             </div>
         </div>
                 </div>
                 
                 <div class="md:w-1/2" data-aos="fade-up">
-                    <form class="rounded-2xl p-8 h-full shadow-sm hover:shadow-md transition-all duration-300" style="background: #4A4A4A; border: 1px solid rgba(201, 160, 141, 0.2);">
-                        <h3 class="text-2xl font-bold mb-8 flex items-center" style="color: #A89F96;">
-                            <i class="fas fa-paper-plane mr-3" style="color: #C9A08D;"></i>
+                    <form class="rounded-2xl p-8 h-full shadow-sm hover:shadow-md transition-all duration-300" style="background: var(--card-bg); border: 1px solid var(--border-color);">
+                        <h3 class="text-2xl font-bold mb-8 flex items-center" style="color: var(--text-tertiary);">
+                            <i class="fas fa-paper-plane mr-3" style="color: var(--accent-primary);"></i>
                             Envoyez-moi un message
                         </h3>
                         
                         <div class="space-y-6">
                             <div class="group">
-                                <label for="name" class="block mb-2 font-medium transition-colors duration-300" style="color: #A89F96;">Nom complet *</label>
-                                <input type="text" id="name" required class="form-input w-full p-3 rounded-lg border-2 transition-all duration-300" style="background: rgba(201, 160, 141, 0.1); border-color: rgba(201, 160, 141, 0.2); color: #A89F96;" onfocus="this.style.borderColor='#C9A08D'; this.style.boxShadow='0 0 0 3px rgba(201, 160, 141, 0.1)'" onblur="this.style.borderColor='rgba(201, 160, 141, 0.2)'; this.style.boxShadow='none'">
+                                <label for="name" class="block mb-2 font-medium transition-colors duration-300" style="color: var(--text-tertiary);">Nom complet *</label>
+                                <input type="text" id="name" required class="form-input w-full p-3 rounded-lg border-2 transition-all duration-300" style="background: rgba(179, 135, 120, 0.05); border-color: var(--border-color); color: var(--text-tertiary);" onfocus="this.style.borderColor='var(--accent-primary)'; this.style.boxShadow='0 0 0 3px rgba(179, 135, 120, 0.1)'" onblur="this.style.borderColor='var(--border-color)'; this.style.boxShadow='none'">
                             </div>
                             
                             <div class="group">
-                                <label for="email" class="block mb-2 font-medium transition-colors duration-300" style="color: #A89F96;">Email *</label>
-                                <input type="email" id="email" required class="form-input w-full p-3 rounded-lg border-2 transition-all duration-300" style="background: rgba(201, 160, 141, 0.1); border-color: rgba(201, 160, 141, 0.2); color: #A89F96;" onfocus="this.style.borderColor='#C9A08D'; this.style.boxShadow='0 0 0 3px rgba(201, 160, 141, 0.1)'" onblur="this.style.borderColor='rgba(201, 160, 141, 0.2)'; this.style.boxShadow='none'">
+                                <label for="email" class="block mb-2 font-medium transition-colors duration-300" style="color: var(--text-tertiary);">Email *</label>
+                                <input type="email" id="email" required class="form-input w-full p-3 rounded-lg border-2 transition-all duration-300" style="background: rgba(179, 135, 120, 0.05); border-color: var(--border-color); color: var(--text-tertiary);" onfocus="this.style.borderColor='var(--accent-primary)'; this.style.boxShadow='0 0 0 3px rgba(179, 135, 120, 0.1)'" onblur="this.style.borderColor='var(--border-color)'; this.style.boxShadow='none'">
                             </div>
                             
                             <div class="group">
-                                <label for="subject" class="block mb-2 font-medium transition-colors duration-300" style="color: #A89F96;">Sujet</label>
-                                <select id="subject" class="form-select w-full p-3 rounded-lg border-2 transition-all duration-300" style="background: rgba(201, 160, 141, 0.1); border-color: rgba(201, 160, 141, 0.2); color: #A89F96;" onfocus="this.style.borderColor='#C9A08D'; this.style.boxShadow='0 0 0 3px rgba(201, 160, 141, 0.1)'" onblur="this.style.borderColor='rgba(201, 160, 141, 0.2)'; this.style.boxShadow='none'">
+                                <label for="subject" class="block mb-2 font-medium transition-colors duration-300" style="color: var(--text-tertiary);">Sujet</label>
+                                <select id="subject" class="form-select w-full p-3 rounded-lg border-2 transition-all duration-300" style="background: rgba(179, 135, 120, 0.05); border-color: var(--border-color); color: var(--text-tertiary);" onfocus="this.style.borderColor='var(--accent-primary)'; this.style.boxShadow='0 0 0 3px rgba(179, 135, 120, 0.1)'" onblur="this.style.borderColor='var(--border-color)'; this.style.boxShadow='none'">
                                     <option value="">Sélectionnez une option</option>
                                     <option value="freelance">Mission freelance</option>
                                     <option value="cdi">Opportunité CDI</option>
@@ -1933,8 +2135,8 @@
                             </div>
                             
                             <div class="group">
-                                <label for="message" class="block mb-2 font-medium transition-colors duration-300" style="color: #A89F96;">Message *</label>
-                                <textarea id="message" rows="5" required class="form-textarea w-full p-3 rounded-lg border-2 transition-all duration-300 resize-vertical min-h-120" style="background: rgba(201, 160, 141, 0.1); border-color: rgba(201, 160, 141, 0.2); color: #A89F96; min-height: 120px;" onfocus="this.style.borderColor='#C9A08D'; this.style.boxShadow='0 0 0 3px rgba(201, 160, 141, 0.1)'" onblur="this.style.borderColor='rgba(201, 160, 141, 0.2)'; this.style.boxShadow='none'"></textarea>
+                                <label for="message" class="block mb-2 font-medium transition-colors duration-300" style="color: var(--text-tertiary);">Message *</label>
+                                <textarea id="message" rows="5" required class="form-textarea w-full p-3 rounded-lg border-2 transition-all duration-300 resize-vertical min-h-120" style="background: rgba(179, 135, 120, 0.05); border-color: var(--border-color); color: var(--text-tertiary); min-height: 120px;" onfocus="this.style.borderColor='var(--accent-primary)'; this.style.boxShadow='0 0 0 3px rgba(179, 135, 120, 0.1)'" onblur="this.style.borderColor='var(--border-color)'; this.style.boxShadow='none'"></textarea>
                             </div>
                             
                             <button type="submit" class="w-full group inline-flex items-center justify-center px-6 py-3 font-medium rounded-lg transition-all duration-300 transform hover:scale-105" style="background: linear-gradient(135deg, #C9A08D 0%, #A89F96 100%); color: white; box-shadow: 0 4px 12px rgba(201, 160, 141, 0.2);" onmouseover="this.style.transform='translateY(-2px) scale(1.02)'; this.style.boxShadow='0 6px 16px rgba(201, 160, 141, 0.3)'" onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='0 4px 12px rgba(201, 160, 141, 0.2)'">
@@ -1949,35 +2151,35 @@
     </section>
 
     <!-- Footer -->
-    <footer class="py-8" style="background: linear-gradient(to bottom, #4A4A4A 0%, #3A3A3A 100%);">
+    <footer class="py-8" style="background: linear-gradient(to bottom, var(--bg-secondary) 0%, var(--bg-tertiary) 100%);">
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex flex-col md:flex-row justify-between items-center">
                 <div class="mb-4 md:mb-0">
                     <a href="#about" class="brand-container">
-                        <div class="brand-logo" style="background: linear-gradient(135deg, #C9A08D 0%, #A89F96 100%); box-shadow: 0 2px 8px rgba(201, 160, 141, 0.3);">
+                        <div class="brand-logo" style="background: linear-gradient(135deg, var(--accent-primary) 0%, var(--accent-secondary) 100%); box-shadow: 0 2px 8px var(--shadow);">
                             <span class="brand-logo-text">IZ</span>
                         </div>
-                        <span class="brand-name" style="color: #A89F96; transition: all 0.3s ease;" onmouseover="this.style.color='#C9A08D'" onmouseout="this.style.color='#A89F96'">Imane Zerouali</span>
+                        <span class="brand-name" style="color: var(--text-tertiary); transition: all 0.3s ease;" onmouseover="this.style.color='var(--accent-primary)'" onmouseout="this.style.color='var(--text-tertiary)'">Imane Zerouali</span>
                     </a>
-                    <p class="text-sm mt-2" style="color: #A89F96;">Consultante Commerciale & Digitale</p>
+                    <p class="text-sm mt-2" style="color: var(--text-tertiary);">Consultante Commerciale & Digitale</p>
                 </div>
                 
                 <div class="flex space-x-4">
-                    <button id="copy-email" class="social-link" style="background: rgba(201, 160, 141, 0.1); color: #C9A08D; border-radius: 0.75rem; width: 2.5rem; height: 2.5rem; display: flex; align-items: center; justify-content: center; transition: all 0.3s ease;" onmouseover="this.style.background='#C9A08D'; this.style.color='white'; this.style.transform='translateY(-2px)'" onmouseout="this.style.background='rgba(201, 160, 141, 0.1)'; this.style.color='#C9A08D'; this.style.transform='translateY(0)'">
+                    <button id="copy-email" class="social-link" style="background: rgba(179, 135, 120, 0.1); color: var(--accent-primary); border-radius: 0.75rem; width: 2.5rem; height: 2.5rem; display: flex; align-items: center; justify-content: center; transition: all 0.3s ease;" onmouseover="this.style.background='var(--accent-primary)'; this.style.color='white'; this.style.transform='translateY(-2px)'" onmouseout="this.style.background='rgba(179, 135, 120, 0.1)'; this.style.color='var(--accent-primary)'; this.style.transform='translateY(0)'">
                         <i class="fas fa-envelope"></i>
                     </button>
-                    <button id="copy-phone" class="social-link" style="background: rgba(201, 160, 141, 0.1); color: #C9A08D; border-radius: 0.75rem; width: 2.5rem; height: 2.5rem; display: flex; align-items: center; justify-content: center; transition: all 0.3s ease;" onmouseover="this.style.background='#C9A08D'; this.style.color='white'; this.style.transform='translateY(-2px)'" onmouseout="this.style.background='rgba(201, 160, 141, 0.1)'; this.style.color='#C9A08D'; this.style.transform='translateY(0)'">
+                    <button id="copy-phone" class="social-link" style="background: rgba(179, 135, 120, 0.1); color: var(--accent-primary); border-radius: 0.75rem; width: 2.5rem; height: 2.5rem; display: flex; align-items: center; justify-content: center; transition: all 0.3s ease;" onmouseover="this.style.background='var(--accent-primary)'; this.style.color='white'; this.style.transform='translateY(-2px)'" onmouseout="this.style.background='rgba(179, 135, 120, 0.1)'; this.style.color='var(--accent-primary)'; this.style.transform='translateY(0)'">
                         <i class="fas fa-phone-alt"></i>
                     </button>
-                    <a href="https://linkedin.com/in/imaane-z-erouali" target="_blank" class="social-link" style="background: rgba(201, 160, 141, 0.1); color: #C9A08D; border-radius: 0.75rem; width: 2.5rem; height: 2.5rem; display: flex; align-items: center; justify-content: center; transition: all 0.3s ease;" onmouseover="this.style.background='#C9A08D'; this.style.color='white'; this.style.transform='translateY(-2px)'" onmouseout="this.style.background='rgba(201, 160, 141, 0.1)'; this.style.color='#C9A08D'; this.style.transform='translateY(0)'">
+                    <a href="https://linkedin.com/in/imaane-z-erouali" target="_blank" class="social-link" style="background: rgba(179, 135, 120, 0.1); color: var(--accent-primary); border-radius: 0.75rem; width: 2.5rem; height: 2.5rem; display: flex; align-items: center; justify-content: center; transition: all 0.3s ease;" onmouseover="this.style.background='var(--accent-primary)'; this.style.color='white'; this.style.transform='translateY(-2px)'" onmouseout="this.style.background='rgba(179, 135, 120, 0.1)'; this.style.color='var(--accent-primary)'; this.style.transform='translateY(0)'">
                         <i class="fab fa-linkedin-in"></i>
                     </a>
                 </div>
             </div>
             
-            <div class="mt-8 pt-8 text-center text-sm" style="border-top: 1px solid rgba(201, 160, 141, 0.2);">
-                <p style="color: #A89F96;">Disponible pour une collaboration en CDI ou en freelance – Lille et métropole</p>
-                <p class="mt-2" style="color: #A89F96;">&copy; 2025 Imane Zerouali. Tous droits réservés.</p>
+            <div class="mt-8 pt-8 text-center text-sm" style="border-top: 1px solid var(--border-color);">
+                <p style="color: var(--text-tertiary);">Disponible pour une collaboration en CDI ou en freelance – Lille et métropole</p>
+                <p class="mt-2" style="color: var(--text-tertiary);">&copy; 2025 Imane Zerouali. Tous droits réservés.</p>
             </div>
         </div>
     </footer>
@@ -2005,6 +2207,81 @@
   
 
     <script>
+        // Theme Toggle Functionality
+        function initThemeToggle() {
+            const themeToggle = document.getElementById('theme-toggle');
+            const mobileThemeToggle = document.getElementById('mobile-theme-toggle');
+            const body = document.body;
+            
+            // Get saved theme from localStorage or default to dark
+            const savedTheme = localStorage.getItem('theme') || 'dark';
+            
+            function setTheme(theme) {
+                if (theme === 'dark') {
+                    body.setAttribute('data-theme', 'dark');
+                    updateToggleState('dark');
+                } else {
+                    body.removeAttribute('data-theme');
+                    updateToggleState('light');
+                }
+                localStorage.setItem('theme', theme);
+            }
+            
+            function updateToggleState(theme) {
+                const icons = document.querySelectorAll('.theme-toggle-icon');
+                const sliders = document.querySelectorAll('.theme-toggle-slider');
+                
+                icons.forEach(icon => {
+                    if (theme === 'dark') {
+                        icon.className = 'theme-toggle-icon fas fa-moon';
+                    } else {
+                        icon.className = 'theme-toggle-icon fas fa-sun';
+                    }
+                });
+                
+                // Force the slider position update by ensuring the data-theme attribute is set
+                // This ensures CSS transitions work correctly
+                if (theme === 'dark') {
+                    body.setAttribute('data-theme', 'dark');
+                } else {
+                    body.removeAttribute('data-theme');
+                }
+            }
+            
+            function toggleTheme() {
+                const currentTheme = body.getAttribute('data-theme') === 'dark' ? 'dark' : 'light';
+                const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+                setTheme(newTheme);
+            }
+            
+            // Initialize theme on page load
+            setTheme(savedTheme);
+            
+            // Add click event listeners
+            if (themeToggle) {
+                themeToggle.addEventListener('click', toggleTheme);
+            }
+            
+            if (mobileThemeToggle) {
+                mobileThemeToggle.addEventListener('click', toggleTheme);
+            }
+            
+            // Add keyboard accessibility
+            [themeToggle, mobileThemeToggle].forEach(toggle => {
+                if (toggle) {
+                    toggle.addEventListener('keydown', function(e) {
+                        if (e.key === 'Enter' || e.key === ' ') {
+                            e.preventDefault();
+                            toggleTheme();
+                        }
+                    });
+                }
+            });
+        }
+
+        // Initialize theme toggle when DOM is loaded
+        document.addEventListener('DOMContentLoaded', initThemeToggle);
+
         // Initialize AOS
         AOS.init({
             duration: 800,
