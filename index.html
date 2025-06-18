@@ -276,11 +276,9 @@
         /* Add these styles to your existing style section */
         .service-card {
             position: relative;
-            background: white;
             border-radius: 1rem;
             padding: 2rem;
             transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-            border: 1px solid rgba(13, 148, 136, 0.1);
             overflow: hidden;
         }
 
@@ -291,15 +289,15 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: linear-gradient(135deg, rgba(13, 148, 136, 0.1) 0%, rgba(13, 148, 136, 0) 100%);
+            background: linear-gradient(135deg, rgba(201, 160, 141, 0.1) 0%, rgba(201, 160, 141, 0) 100%);
             opacity: 0;
             transition: opacity 0.4s ease;
         }
 
         .service-card:hover {
             transform: translateY(-8px);
-            box-shadow: 0 20px 40px rgba(13, 148, 136, 0.1);
-            border-color: rgba(13, 148, 136, 0.2);
+            box-shadow: 0 20px 40px rgba(201, 160, 141, 0.2);
+            border-color: rgba(201, 160, 141, 0.4);
         }
 
         .service-card:hover::before {
@@ -309,7 +307,6 @@
         .service-icon {
             width: 3.5rem;
             height: 3.5rem;
-            background: linear-gradient(135deg, #0d9488 0%, #0891b2 100%);
             border-radius: 1rem;
             display: flex;
             align-items: center;
@@ -330,13 +327,12 @@
         .service-title {
             font-size: 1.25rem;
             font-weight: 600;
-            color: #1f2937;
             margin-bottom: 1rem;
             transition: color 0.3s ease;
         }
 
         .service-card:hover .service-title {
-            color: #0d9488;
+            color: #C9A08D !important;
         }
 
         .service-list {
@@ -349,7 +345,6 @@
             position: relative;
             padding-left: 1.5rem;
             margin-bottom: 0.75rem;
-            color: #4b5563;
             transition: all 0.3s ease;
         }
 
@@ -357,17 +352,19 @@
             content: '•';
             position: absolute;
             left: 0;
-            color: #0d9488;
+            color: #C9A08D;
             font-weight: bold;
             transition: transform 0.3s ease;
         }
 
         .service-card:hover .service-list li {
             transform: translateX(4px);
+            color: #A89F96 !important;
         }
 
         .service-card:hover .service-list li::before {
             transform: scale(1.2);
+            color: #C9A08D;
         }
 
         /* Add these styles to your existing style section */
@@ -377,7 +374,6 @@
             top: 0;
             width: 1rem;
             height: 1rem;
-            background-color: #0d9488;
             border-radius: 50%;
             transition: all 0.3s ease;
             z-index: 1;
@@ -391,7 +387,7 @@
             transform: translate(-50%, -50%);
             width: 100%;
             height: 100%;
-            background-color: #0d9488;
+            background-color: #C9A08D;
             border-radius: 50%;
             opacity: 0.3;
             transition: all 0.3s ease;
@@ -406,7 +402,7 @@
 
         .timeline-item:hover .timeline-dot {
             transform: scale(1.2);
-            box-shadow: 0 0 0 4px rgba(13, 148, 136, 0.2);
+            box-shadow: 0 0 0 4px rgba(201, 160, 141, 0.2);
         }
 
         .timeline-item:hover .timeline-dot::before {
@@ -421,18 +417,16 @@
         .timeline-content {
             position: relative;
             padding-left: 1.5rem;
-            border-left: 2px solid #e2e8f0;
             transition: all 0.3s ease;
         }
 
         .timeline-item:hover .timeline-content {
-            border-left-color: #0d9488;
+            border-left-color: #C9A08D !important;
         }
 
         /* Add these styles to your existing style section */
         .about-section {
             position: relative;
-            background: linear-gradient(135deg, #f8fafc 0%, #f0fdfa 100%);
             overflow: hidden;
         }
 
@@ -443,7 +437,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%230d9488' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23C9A08D' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
         }
 
         .about-container {
@@ -452,16 +446,14 @@
         }
 
         .about-card {
-            background: white;
             border-radius: 2rem;
-            box-shadow: 0 20px 40px rgba(13, 148, 136, 0.1);
             overflow: hidden;
             transition: all 0.4s ease;
         }
 
         .about-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 25px 50px rgba(13, 148, 136, 0.15);
+            box-shadow: 0 25px 50px rgba(201, 160, 141, 0.2);
         }
 
         .about-icon-wrapper {
@@ -475,9 +467,7 @@
             position: absolute;
             width: 100%;
             height: 100%;
-            background: linear-gradient(135deg, #0d9488 0%, #0891b2 100%);
             border-radius: 50%;
-            opacity: 0.1;
             transform: scale(1.2);
             transition: all 0.4s ease;
         }
@@ -486,7 +476,6 @@
             position: relative;
             width: 100%;
             height: 100%;
-            background: linear-gradient(135deg, #0d9488 0%, #0891b2 100%);
             border-radius: 50%;
             display: flex;
             align-items: center;
@@ -496,7 +485,7 @@
 
         .about-card:hover .about-icon-bg {
             transform: scale(1.4);
-            opacity: 0.2;
+            opacity: 0.3;
         }
 
         .about-card:hover .about-icon {
@@ -521,29 +510,22 @@
             transform: translateX(-50%);
             width: 60px;
             height: 3px;
-            background: linear-gradient(90deg, #0d9488, #0891b2);
+            background: linear-gradient(90deg, #C9A08D, #A89F96);
             border-radius: 3px;
         }
 
         .about-text {
             font-size: 1.1rem;
             line-height: 1.8;
-            color: #4b5563;
         }
 
         .about-text p {
             margin-bottom: 1.5rem;
         }
 
-        .about-text strong {
-            color: #0d9488;
-            font-weight: 600;
-        }
-
         .about-highlight {
             position: relative;
             display: inline-block;
-            color: #0d9488;
             font-weight: 500;
         }
 
@@ -554,7 +536,7 @@
             left: 0;
             width: 100%;
             height: 0.2em;
-            background-color: rgba(13, 148, 136, 0.2);
+            background-color: rgba(201, 160, 141, 0.2);
             z-index: -1;
             transition: all 0.3s ease;
         }
@@ -863,28 +845,667 @@
             0% { transform: translateX(-100%); }
             100% { transform: translateX(100%); }
         }
+
+        /* Updated expandable section styles */
+        .experience-card {
+            position: relative;
+            overflow: hidden;
+            margin-top: 0.5rem;
+            border-radius: 0.75rem;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .experience-header {
+            position: relative;
+            padding: 0.75rem 3rem 0.75rem 1rem;  /* Added right padding to account for button */
+            background-color: rgba(13, 148, 136, 0.05);
+            border: 1px solid rgba(13, 148, 136, 0.1);
+            border-radius: 0.75rem;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            display: flex;
+            align-items: center;
+            min-height: 44px;
+        }
+
+        .experience-header:hover {
+            background-color: rgba(13, 148, 136, 0.1);
+            border-color: rgba(13, 148, 136, 0.2);
+            transform: translateY(-1px);
+        }
+
+        .experience-header:active {
+            transform: translateY(0);
+        }
+
+        .experience-header::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            border-radius: 0.75rem;
+            pointer-events: none;
+            box-shadow: 0 0 0 0 rgba(13, 148, 136, 0);
+            transition: box-shadow 0.3s ease;
+        }
+
+        .experience-header:focus-visible::before {
+            box-shadow: 0 0 0 2px rgba(13, 148, 136, 0.5);
+        }
+
+        .experience-header.active {
+            background-color: rgba(13, 148, 136, 0.1);
+            border-bottom-left-radius: 0;
+            border-bottom-right-radius: 0;
+            border-bottom-color: transparent;
+        }
+
+        .expand-btn {
+            position: absolute;
+            right: 1rem;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 24px;
+            height: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            background-color: white;
+            color: #0d9488;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            flex-shrink: 0;
+            border: 1px solid rgba(13, 148, 136, 0.2);
+            transform-origin: center;
+        }
+
+        .experience-header:hover .expand-btn {
+            background-color: #0d9488;
+            color: white;
+            transform: translateY(-50%) scale(1.1);
+        }
+
+        .experience-header.active .expand-btn {
+            background-color: #0d9488;
+            color: white;
+            transform: translateY(-50%) rotate(180deg);
+        }
+
+        .experience-header.active:hover .expand-btn {
+            transform: translateY(-50%) rotate(180deg) scale(1.1);
+        }
+
+        .expand-btn i {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            height: 100%;
+            transition: transform 0.3s ease;
+        }
+
+        .experience-details {
+            max-height: 0;
+            opacity: 0;
+            overflow: hidden;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            border: 1px solid rgba(201, 160, 141, 0.1);
+            border-top: none;
+            border-bottom-left-radius: 0.75rem;
+            border-bottom-right-radius: 0.75rem;
+            background-color: rgba(168, 159, 150, 0.1);
+        }
+
+        .experience-details.expanded {
+            max-height: 500px;
+            opacity: 1;
+            padding: 1rem;
+        }
+
+        .experience-details ul {
+            margin: 0;
+            padding-left: 1.25rem;
+        }
+
+        .experience-details li {
+            position: relative;
+            padding-left: 0.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .experience-details li::before {
+            content: '';
+            position: absolute;
+            left: -1rem;
+            top: 0.6rem;
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background-color: #C9A08D;
+        }
+
+        /* Modern Skills Section Styles */
+        .skill-item {
+            border: 1px solid rgba(13, 148, 136, 0.1);
+            border-radius: 0.75rem;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            overflow: hidden;
+        }
+
+        .skill-item:hover {
+            border-color: rgba(13, 148, 136, 0.2);
+            box-shadow: 0 4px 12px rgba(13, 148, 136, 0.1);
+        }
+
+        .skill-header-new {
+            display: flex;
+            align-items: center;
+            padding: 1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            background: white;
+        }
+
+        .skill-header-new:hover {
+            background: rgba(13, 148, 136, 0.02);
+        }
+
+        .skill-header-new.active {
+            background: rgba(13, 148, 136, 0.05);
+            border-bottom: 1px solid rgba(13, 148, 136, 0.1);
+        }
+
+        .skill-icon-wrapper {
+            width: 40px;
+            height: 40px;
+            background: rgba(13, 148, 136, 0.1);
+            border-radius: 0.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .skill-item:hover .skill-icon-wrapper {
+            background: rgba(13, 148, 136, 0.15);
+            transform: scale(1.05);
+        }
+
+        .skill-content {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .skill-title-new {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #1f2937;
+            margin: 0;
+        }
+
+        .skill-toggle {
+            width: 28px;
+            height: 28px;
+            border: none;
+            background: rgba(13, 148, 136, 0.1);
+            color: #0d9488;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            flex-shrink: 0;
+        }
+
+        .skill-toggle:hover {
+            background: #0d9488;
+            color: white;
+            transform: scale(1.1);
+        }
+
+        .skill-toggle.active {
+            background: #0d9488;
+            color: white;
+            transform: rotate(45deg);
+        }
+
+        .skill-toggle.active:hover {
+            transform: rotate(45deg) scale(1.1);
+        }
+
+        .skill-details-new {
+            max-height: 0;
+            overflow: hidden;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            background: rgba(13, 148, 136, 0.02);
+        }
+
+        .skill-details-new.expanded {
+            max-height: 300px;
+            padding: 1rem;
+            border-top: 1px solid rgba(13, 148, 136, 0.1);
+        }
+
+        .skill-details-new p {
+            margin: 0;
+            color: #4b5563;
+            line-height: 1.6;
+        }
+
+        .skill-details-new ul {
+            margin: 0;
+            padding-left: 1.25rem;
+            color: #4b5563;
+        }
+
+        .skill-details-new li {
+            margin-bottom: 0.5rem;
+            position: relative;
+        }
+
+        .skill-details-new li::before {
+            content: '';
+            position: absolute;
+            left: -1rem;
+            top: 0.6rem;
+            width: 4px;
+            height: 4px;
+            border-radius: 50%;
+            background-color: #C9A08D;
+        }
+
+        /* Purple theme for soft skills */
+        .skill-item:nth-child(n) .skill-icon-wrapper i {
+            color: #0d9488;
+        }
+
+        .skill-item:nth-child(n) .skill-toggle {
+            background: rgba(13, 148, 136, 0.1);
+            color: #0d9488;
+        }
+
+        /* Purple icons for soft skills section */
+        [data-aos="fade-left"] .skill-icon-wrapper i {
+            color: #9333ea !important;
+        }
+
+        [data-aos="fade-left"] .skill-toggle {
+            background: rgba(147, 51, 234, 0.1) !important;
+            color: #9333ea !important;
+        }
+
+        [data-aos="fade-left"] .skill-toggle:hover {
+            background: #9333ea !important;
+            color: white !important;
+        }
+
+        [data-aos="fade-left"] .skill-toggle.active {
+            background: #9333ea !important;
+            color: white !important;
+        }
+
+        [data-aos="fade-left"] .skill-item:hover .skill-icon-wrapper {
+            background: rgba(147, 51, 234, 0.15) !important;
+        }
+
+        /* Update the expand button styles for skills section */
+        .skill-card .expand-btn {
+            position: absolute;
+            right: 1rem;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 32px;
+            height: 32px;
+            background: linear-gradient(135deg, #0d9488 0%, #0891b2 100%);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 2px 8px rgba(13, 148, 136, 0.2);
+            font-size: 0.875rem;
+        }
+
+        .skill-card .expand-btn:hover {
+            transform: translateY(-50%) scale(1.1);
+            box-shadow: 0 4px 12px rgba(13, 148, 136, 0.3);
+            background: linear-gradient(135deg, #0f766e 0%, #0e7490 100%);
+        }
+
+        .skill-card .expand-btn.expanded {
+            transform: translateY(-50%) rotate(45deg);
+            background: linear-gradient(135deg, #0d9488 0%, #0891b2 100%);
+        }
+
+        .skill-card .expand-btn.expanded:hover {
+            transform: translateY(-50%) rotate(45deg) scale(1.1);
+            box-shadow: 0 4px 12px rgba(13, 148, 136, 0.3);
+        }
+
+        .skill-card .expand-btn i {
+            transition: transform 0.3s ease;
+        }
+
+        /* Update skill header to accommodate new button position */
+        .skill-card .skill-header {
+            position: relative;
+            display: flex;
+            align-items: center;
+            padding: 1.5rem 4rem 1.5rem 1.5rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border-radius: 0.75rem;
+        }
+
+        .skill-card .skill-header:hover {
+            background: rgba(201, 160, 141, 0.1);
+        }
+
+        .skill-card .skill-icon {
+            position: absolute;
+            left: 1.5rem;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        .skill-card .skill-title {
+            text-align: center;
+            flex-grow: 1;
+            padding: 0 3rem;
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #1f2937;
+        }
+
+        /* Enhanced skill details styling */
+        .skill-card .skill-details {
+            max-height: 0;
+            opacity: 0;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            overflow: hidden;
+            padding: 0;
+            background: rgba(74, 74, 74, 0.1);
+            border-top: none;
+            margin: 0 1.5rem;
+        }
+
+        .skill-card .skill-details.expanded {
+            max-height: 300px;
+            opacity: 1;
+            padding: 1.5rem;
+            border-top: 1px solid rgba(201, 160, 141, 0.1);
+        }
+
+        .skill-card .skill-details p {
+            margin: 0;
+            color: #A89F96;
+            line-height: 1.7;
+            font-size: 1rem;
+        }
+
+        .skill-card .skill-details ul {
+            margin: 0;
+            padding-left: 1.25rem;
+            color: #A89F96;
+        }
+
+        .skill-card .skill-details li {
+            margin-bottom: 0.5rem;
+            position: relative;
+            line-height: 1.6;
+            color: #A89F96;
+        }
+
+        .skill-card .skill-details li::before {
+            content: '';
+            position: absolute;
+            left: -1rem;
+            top: 0.7rem;
+            width: 4px;
+            height: 4px;
+            border-radius: 50%;
+            background-color: #C9A08D;
+        }
+
+        /* Floating Theme Toggle Button */
+        .theme-toggle-btn {
+            position: relative;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            backdrop-filter: blur(10px);
+            background: rgba(255, 255, 255, 0.9);
+            border: 1px solid rgba(13, 148, 136, 0.1);
+        }
+
+        @media (min-width: 768px) {
+            .theme-toggle-btn {
+                width: 50px;
+                height: 50px;
+            }
+        }
+
+        .theme-toggle-btn:hover {
+            background: rgba(255, 255, 255, 1);
+            border-color: rgba(13, 148, 136, 0.2);
+            box-shadow: 0 8px 25px rgba(13, 148, 136, 0.15);
+        }
+
+        .theme-icon-container {
+            position: relative;
+            width: 16px;
+            height: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        @media (min-width: 768px) {
+            .theme-icon-container {
+                width: 20px;
+                height: 20px;
+            }
+        }
+
+        .theme-icon {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) scale(0) rotate(-180deg);
+            opacity: 0;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .theme-icon.active {
+            transform: translate(-50%, -50%) scale(1) rotate(0deg);
+            opacity: 1;
+        }
+
+        .theme-toggle-btn:hover .theme-icon.active {
+            transform: translate(-50%, -50%) scale(1.1) rotate(10deg);
+        }
+
+        /* Floating animation - reduced on mobile */
+        .theme-toggle-btn {
+            animation: float-theme 3s ease-in-out infinite;
+        }
+
+        @keyframes float-theme {
+            0%, 100% { transform: translateY(0px) scale(1); }
+            50% { transform: translateY(-5px) scale(1); }
+        }
+
+        .theme-toggle-btn:hover {
+            animation-play-state: paused;
+        }
+
+        /* Navigation Theme Toggle Styles */
+        .nav-theme-toggle {
+            position: relative;
+            width: 32px;
+            height: 32px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            border-radius: 50%;
+            transition: all 0.3s ease;
+            background-color: rgba(168, 159, 150, 0.1);
+        }
+
+        .nav-theme-toggle:hover {
+            background-color: rgba(201, 160, 141, 0.2);
+            transform: scale(1.1);
+        }
+
+        .nav-theme-toggle-mobile {
+            width: 100%;
+            text-align: left;
+            background: none;
+            border: none;
+            cursor: pointer;
+        }
+
+        /* Enhanced Navigation Styles */
+        .nav-header {
+            background-color: #4A4A4A;
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(168, 159, 150, 0.1);
+        }
+
+        .nav-brand-logo {
+            background: linear-gradient(135deg, #C9A08D 0%, #A89F96 100%);
+            box-shadow: 0 2px 8px rgba(201, 160, 141, 0.3);
+        }
+
+        .nav-brand-name {
+            color: #A89F96;
+            transition: all 0.3s ease;
+        }
+
+        .nav-brand-name:hover {
+            color: #C9A08D;
+        }
+
+        .nav-link-custom {
+            color: #A89F96;
+            position: relative;
+            padding: 0.5rem 1rem;
+            border-radius: 0.5rem;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .nav-link-custom::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            width: 0;
+            height: 2px;
+            background: #C9A08D;
+            transition: all 0.3s ease;
+            transform: translateX(-50%);
+        }
+
+        .nav-link-custom:hover {
+            color: #C9A08D;
+        }
+
+        .nav-link-custom:hover::before {
+            width: 80%;
+        }
+
+        .nav-link-custom.active {
+            color: #C9A08D;
+        }
+
+        .nav-link-custom.active::before {
+            width: 80%;
+        }
+
+        .nav-contact-btn {
+            background-color: #C9A08D;
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.75rem;
+            font-weight: 500;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 2px 8px rgba(201, 160, 141, 0.2);
+        }
+
+        .nav-contact-btn:hover {
+            background-color: #A89F96;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(201, 160, 141, 0.3);
+        }
+
+        .mobile-menu-bg {
+            background-color: #4A4A4A;
+            border-color: rgba(168, 159, 150, 0.2);
+            backdrop-filter: blur(10px);
+        }
+
+        .mobile-nav-link {
+            color: #A89F96;
+            transition: all 0.3s ease;
+        }
+
+        .mobile-nav-link:hover {
+            color: #C9A08D;
+            background-color: rgba(168, 159, 150, 0.1);
+        }
+
+        .mobile-contact-btn {
+            background-color: #C9A08D;
+            color: white;
+            transition: all 0.3s ease;
+        }
+
+        .mobile-contact-btn:hover {
+            background-color: #A89F96;
+            transform: scale(1.02);
+        }
+
+        .hamburger-btn {
+            color: #A89F96;
+            transition: all 0.3s ease;
+        }
+
+        .hamburger-btn:hover {
+            color: #C9A08D;
+            transform: scale(1.1);
+        }
     </style>
 </head>
 <body class="bg-gray-50 text-gray-800">
     <!-- Navigation -->
-    <nav class="bg-white shadow-md sticky top-0 z-50">
+    <nav class="nav-header shadow-md sticky top-0 z-50">
         <div class="max-w-6xl mx-auto px-4">
             <div class="flex justify-between items-center py-4">
                 <a href="#about" class="brand-container">
-                    <div class="brand-logo">
+                    <div class="brand-logo nav-brand-logo">
                         <span class="brand-logo-text">IZ</span>
                     </div>
-                    <span class="brand-name">Imane Zerouali</span>
+                    <span class="brand-name nav-brand-name">Imane Zerouali</span>
                 </a>
                 <div class="hidden md:flex items-center space-x-8">
-                    <a href="#about" class="nav-link">À propos</a>
-                    <a href="#services" class="nav-link">Services</a>
-                    <a href="#experience" class="nav-link">Expériences</a>
-                    <a href="#skills" class="nav-link">Compétences</a>
-                    <a href="#contact" class="btn btn-primary">Contact</a>
+                    <a href="#about" class="nav-link-custom">À propos</a>
+                    <a href="#services" class="nav-link-custom">Services</a>
+                    <a href="#experience" class="nav-link-custom">Expériences</a>
+                    <a href="#skills" class="nav-link-custom">Compétences</a>
+                    <a href="#contact" class="nav-contact-btn">Contact</a>
                 </div>
                 <div class="md:hidden">
-                    <button id="menu-btn" class="text-gray-600 focus:outline-none">
+                    <button id="menu-btn" class="hamburger-btn focus:outline-none">
                         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
                         </svg>
@@ -893,19 +1514,19 @@
             </div>
         </div>
         <!-- Mobile menu -->
-        <div id="mobile-menu" class="md:hidden bg-white border-t">
+        <div id="mobile-menu" class="mobile-menu-bg md:hidden border-t">
             <div class="px-4 py-2 flex flex-col space-y-2">
-                <a href="#about" class="nav-link block px-4 py-2 text-gray-800 hover:bg-teal-50 rounded-md" style="--i: 1">À propos</a>
-                <a href="#services" class="nav-link block px-4 py-2 text-gray-800 hover:bg-teal-50 rounded-md" style="--i: 2">Services</a>
-                <a href="#experience" class="nav-link block px-4 py-2 text-gray-800 hover:bg-teal-50 rounded-md" style="--i: 3">Expériences</a>
-                <a href="#skills" class="nav-link block px-4 py-2 text-gray-800 hover:bg-teal-50 rounded-md" style="--i: 4">Compétences</a>
-                <a href="#contact" class="block px-4 py-2 bg-teal-600 text-white rounded-md text-center" style="--i: 5">Contact</a>
+                <a href="#about" class="mobile-nav-link nav-link block px-4 py-2 rounded-md" style="--i: 1">À propos</a>
+                <a href="#services" class="mobile-nav-link nav-link block px-4 py-2 rounded-md" style="--i: 2">Services</a>
+                <a href="#experience" class="mobile-nav-link nav-link block px-4 py-2 rounded-md" style="--i: 3">Expériences</a>
+                <a href="#skills" class="mobile-nav-link nav-link block px-4 py-2 rounded-md" style="--i: 4">Compétences</a>
+                <a href="#contact" class="mobile-contact-btn block px-4 py-2 rounded-md text-center" style="--i: 5">Contact</a>
             </div>
         </div>
     </nav>
 
     <!-- Hero Section -->
-    <section id="about" class="min-h-[90vh] flex items-center bg-gradient-to-br from-gray-50 via-teal-50 to-gray-50 relative">
+    <section id="about" class="min-h-[90vh] flex items-center relative" style="background-color: #4A4A4A;">
         <div class="absolute inset-0 opacity-10">
             <div class="absolute inset-0 pattern-bg"></div>
         </div>
@@ -914,39 +1535,35 @@
             <div class="flex flex-col md:flex-row items-center justify-between gap-8 md:gap-12">
                 <div class="w-full md:w-1/2 text-center md:text-left" data-aos="fade-right" data-aos-duration="1000">
                     <div class="space-y-4 sm:space-y-6">
-                        <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold text-gray-800 leading-tight">
+                        <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold leading-tight" style="color: #A89F96;">
                             Imane Zerouali
-                            <span class="block text-2xl sm:text-3xl md:text-4xl font-semibold text-teal-600 mt-2">Chargée Administrative & Commerciale</span>
+                            <span class="block text-2xl sm:text-3xl md:text-4xl font-semibold mt-2" style="color: #C9A08D;">Consultante Commerciale & Digitale</span>
                         </h1>
                         
-                        <p class="text-lg sm:text-xl text-gray-700 font-medium leading-relaxed">
-                            Organisation, fiabilité et rigueur au service de votre activité.
+                        <p class="text-lg sm:text-xl font-medium leading-relaxed" style="color: #A89F96;">
+                            J'aide les entreprises à renforcer leur présence digitale tout en structurant leur développement commercial.
                         </p>
 
                         <div class="flex flex-wrap justify-center md:justify-start gap-3 sm:gap-4 pt-4">
-                            <a href="#contact" class="btn btn-primary group w-full sm:w-auto">
+                            <a href="#contact" class="group w-full sm:w-auto inline-flex items-center justify-center px-6 py-3 font-medium rounded-xl transition-all duration-300 transform hover:scale-105" style="background-color: #C9A08D; color: white;">
                                 <i class="fas fa-envelope mr-2 group-hover:translate-x-1 transition-transform duration-300"></i>
                                 Me contacter
                             </a>
-                            <a href="#" class="btn btn-outline group w-full sm:w-auto" id="download-cv">
+                            <a href="#" class="group w-full sm:w-auto inline-flex items-center justify-center px-6 py-3 font-medium rounded-xl transition-all duration-300 transform hover:scale-105 border-2" style="border-color: #C9A08D; color: #C9A08D; background-color: transparent;" id="download-cv">
                                 <i class="fas fa-download mr-2 group-hover:translate-y-1 transition-transform duration-300"></i>
                                 Télécharger mon CV
                             </a>
                         </div>
 
                         <!-- Quick stats -->
-                        <div class="grid grid-cols-2 md:grid-cols-3 gap-3 sm:gap-4 pt-6 sm:pt-8">
-                            <div class="bg-white/80 backdrop-blur-sm rounded-xl p-3 sm:p-4 shadow-sm hover:shadow-md transition-all duration-300">
-                                <div class="text-xl sm:text-2xl font-bold text-teal-600">3+</div>
-                                <div class="text-xs sm:text-sm text-gray-600">Années d'expérience</div>
+                        <div class="grid grid-cols-2 md:grid-cols-2 gap-3 sm:gap-4 pt-6 sm:pt-8">
+                            <div class="backdrop-blur-sm rounded-xl p-3 sm:p-4 shadow-sm hover:shadow-md transition-all duration-300" style="background-color: rgba(168, 159, 150, 0.2); border: 1px solid rgba(168, 159, 150, 0.3);">
+                                <div class="text-xl sm:text-2xl font-bold" style="color: #C9A08D;">3+</div>
+                                <div class="text-xs sm:text-sm" style="color: #A89F96;">Années d'expérience</div>
                             </div>
-                            <div class="bg-white/80 backdrop-blur-sm rounded-xl p-3 sm:p-4 shadow-sm hover:shadow-md transition-all duration-300">
-                                <div class="text-xl sm:text-2xl font-bold text-teal-600">100%</div>
-                                <div class="text-xs sm:text-sm text-gray-600">Satisfaction client</div>
-                            </div>
-                            <div class="bg-white/80 backdrop-blur-sm rounded-xl p-3 sm:p-4 shadow-sm hover:shadow-md transition-all duration-300">
-                                <div class="text-xl sm:text-2xl font-bold text-teal-600">24/7</div>
-                                <div class="text-xs sm:text-sm text-gray-600">Disponibilité</div>
+                            <div class="backdrop-blur-sm rounded-xl p-3 sm:p-4 shadow-sm hover:shadow-md transition-all duration-300" style="background-color: rgba(168, 159, 150, 0.2); border: 1px solid rgba(168, 159, 150, 0.3);">
+                                <div class="text-xl sm:text-2xl font-bold" style="color: #C9A08D;">100%</div>
+                                <div class="text-xs sm:text-sm" style="color: #A89F96;">Satisfaction client</div>
                             </div>
                         </div>
                     </div>
@@ -955,40 +1572,12 @@
                 <div class="w-full md:w-1/2 flex justify-center" data-aos="fade-up" data-aos-duration="1000">
                     <div class="relative">
                         <!-- Main profile circle -->
-                        <div class="w-64 h-64 sm:w-72 sm:h-72 md:w-96 md:h-96 bg-gradient-to-br from-teal-100 to-cyan-100 rounded-full overflow-hidden border-4 border-white shadow-2xl relative">
+                        <div class="w-64 h-64 sm:w-72 sm:h-72 md:w-96 md:h-96 rounded-full overflow-hidden border-4 shadow-2xl relative" style="background: linear-gradient(135deg, #A89F96, #C9A08D); border-color: #C9A08D;">
                             <img draggable="false" src="profile.png" alt="Imane Zerouali" class="w-full h-full object-cover">
                             
                             <!-- Decorative circles -->
-                            <div class="absolute -top-4 -right-4 w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 bg-teal-100 rounded-full opacity-50 animate-pulse"></div>
-                            <div class="absolute -bottom-4 -left-4 w-20 h-20 sm:w-24 sm:h-24 md:w-32 md:h-32 bg-cyan-100 rounded-full opacity-50 animate-pulse" style="animation-delay: 1s;"></div>
-                        </div>
-
-                        <!-- Location card -->
-                        <div class="absolute -bottom-4 -right-4 sm:-bottom-6 sm:-right-6 bg-white p-3 sm:p-4 md:p-6 rounded-xl md:rounded-2xl shadow-xl transform hover:scale-105 transition-transform duration-300" data-aos="zoom-in" data-aos-delay="300">
-                            <div class="flex items-center">
-                                <div class="w-10 h-10 sm:w-12 sm:h-12 bg-teal-100 rounded-lg md:rounded-xl flex items-center justify-center text-teal-600 mr-3 sm:mr-4">
-                                    <i class="fas fa-map-marker-alt text-lg sm:text-xl"></i>
-                                </div>
-                                <div>
-                                    <p class="text-xs sm:text-sm text-gray-600">Disponible sur</p>
-                                    <p class="text-sm sm:text-base font-semibold text-gray-800">Lille et métropole</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Floating elements -->
-                        <div class="absolute bottom-1/4 -left-4 sm:-left-8 bg-white p-3 sm:p-4 rounded-lg md:rounded-xl shadow-lg transform hover:scale-105 transition-transform duration-300 hidden sm:block" data-aos="fade-up" data-aos-delay="400">
-                            <div class="flex items-center">
-                                <i class="fas fa-check-circle text-teal-600 mr-2"></i>
-                                <span class="text-xs sm:text-sm font-medium">Disponible immédiatement</span>
-                            </div>
-                        </div>
-
-                        <div class="absolute bottom-1/4 -right-4 sm:-right-8 bg-white p-3 sm:p-4 rounded-lg md:rounded-xl shadow-lg transform hover:scale-105 transition-transform duration-300 hidden sm:block" data-aos="fade-up" data-aos-delay="500">
-                            <div class="flex items-center">
-                                <i class="fas fa-star text-teal-600 mr-2"></i>
-                                <span class="text-xs sm:text-sm font-medium">Expert en gestion</span>
-                            </div>
+                            <div class="absolute -top-4 -right-4 w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 rounded-full opacity-50 animate-pulse" style="background-color: #A89F96;"></div>
+                            <div class="absolute -bottom-4 -left-4 w-20 h-20 sm:w-24 sm:h-24 md:w-32 md:h-32 rounded-full opacity-50 animate-pulse" style="background-color: #C9A08D; animation-delay: 1s;"></div>
                         </div>
                     </div>
                 </div>
@@ -997,33 +1586,30 @@
     </section>
 
     <!-- About Section -->
-    <section class="about-section py-24">
+    <section class="py-24" style="background: linear-gradient(to bottom, #4A4A4A 0%, #6B6B6B 100%);">
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 about-container">
             <div class="text-center mb-16" data-aos="fade-up">
-                <h2 class="text-4xl font-bold text-gray-800 mb-4">À propos</h2>
-                <div class="w-24 h-1 bg-teal-600 mx-auto"></div>
+                <h2 class="text-4xl font-bold mb-4" style="color: #C9A08D;">À propos</h2>
+                <div class="w-24 h-1 mx-auto" style="background-color: #C9A08D;"></div>
             </div>
             
-            <div class="about-card" data-aos="fade-up" data-aos-delay="200">
+            <div class="about-card" data-aos="fade-up" data-aos-delay="200" style="background: #4A4A4A; box-shadow: 0 20px 40px rgba(201, 160, 141, 0.15);">
                 <div class="flex flex-col items-center py-12">
                     <div class="about-icon-wrapper mb-8">
-                        <div class="about-icon-bg"></div>
-                        <div class="about-icon">
+                        <div class="about-icon-bg" style="background: linear-gradient(135deg, #C9A08D 0%, #6B6B6B 100%); opacity: 0.2;"></div>
+                        <div class="about-icon" style="background: linear-gradient(135deg, #C9A08D 0%, #6B6B6B 100%);">
                             <i class="fas fa-user-tie"></i>
                         </div>
                     </div>
                     
                     <div class="about-content max-w-3xl mx-auto">
                         <div class="about-text">
-                            <p>
-                                Diplômée en <span class="about-highlight">management des organisations</span>, je mets mes compétences administratives et commerciales au service des entreprises qui souhaitent optimiser leur gestion quotidienne.
-                            </p>
-                            <p>
-                                Avec une solide expérience dans le <span class="about-highlight">support administratif</span>, la facturation, la coordination et la relation client, j'apporte à chaque mission mon sens de l'organisation, ma rigueur et ma fiabilité.
-                            </p>
-                            <p>
-                                Entrepreneuse dans l'âme, j'ai également fondé ma micro-entreprise dans le social media marketing, <strong>Digital Waves</strong>, ce qui m'a permis de développer des compétences complémentaires en gestion de projets digitaux.
-                            </p>
+                            <p style="color: #B0B0B0;">
+                                Diplômée en <span class="about-highlight" style="color: #C9A08D;">management des organisations</span>, je mets aujourd'hui mes compétences administratives, commerciales et digitales au service d'entreprises ambitieuses. Fondatrice de <span class="about-highlight" style="color: #C9A08D;">Digital Waves</span>, une micro-entreprise spécialisée en social media marketing, j'ai accompagné un acteur BTP à Meknès (+ 40 % d'engagement, 15 devis, 2 contrats) et dynamisé la visibilité d'un restaurant à Roubaix (campagnes multicanales, contenu visuel).
+        </p>
+                            <p style="color: #B0B0B0;">
+                                Grâce à cette double expertise – <span class="about-highlight" style="color: #C9A08D;">gestion de cycle commercial</span> et <span class="about-highlight" style="color: #C9A08D;">coordination de projets digitaux</span> – je suis capable de piloter des campagnes performantes, de conclure des contrats et d'organiser les tâches opérationnelles avec efficacité. Rigoureuse, orientée résultats et disponible immédiatement, je souhaite contribuer au développement d'équipes dynamiques en <span class="about-highlight" style="color: #C9A08D;">CDI</span> ou en <span class="about-highlight" style="color: #C9A08D;">immersion</span>, sur le territoire lillois.
+        </p>
                         </div>
                     </div>
                 </div>
@@ -1032,96 +1618,68 @@
     </section>
 
     <!-- Services Section -->
-    <section id="services" class="py-20 bg-gray-50">
+    <section id="services" class="py-20" style="background: linear-gradient(to bottom, #6B6B6B 0%, #4A4A4A 100%);">
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16" data-aos="fade-up">
-                <h2 class="text-3xl font-bold text-gray-800 mb-4">Mes Services</h2>
-                <p class="text-gray-600 max-w-2xl mx-auto">Je propose un accompagnement complet pour soulager votre entreprise des tâches administratives et commerciales.</p>
-                <div class="w-20 h-1 bg-teal-600 mx-auto mt-4"></div>
+                <h2 class="text-3xl font-bold mb-4" style="color: #C9A08D;">Mes Services</h2>
+                <p class="max-w-2xl mx-auto text-lg font-medium" style="color: #D0D0D0;">Je propose un accompagnement complet pour soulager votre entreprise des tâches administratives, commerciales et digitales.</p>
+                <div class="w-20 h-1 mx-auto mt-4" style="background-color: #C9A08D;"></div>
             </div>
             
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div class="grid md:grid-cols-2 lg:grid-cols-2 gap-8">
                 <!-- Service 1 -->
-                <div class="service-card" data-aos="fade-up" data-aos-delay="100">
-                    <div class="service-icon">
-                        <i class="fas fa-folder-open"></i>
+                <div class="service-card" data-aos="fade-up" data-aos-delay="100" style="background: #4A4A4A; border: 1px solid rgba(201, 160, 141, 0.2);">
+                    <div class="service-icon" style="background: linear-gradient(135deg, #C9A08D 0%, #4A4A4A 100%);">
+                        <i class="fas fa-handshake"></i>
                     </div>
-                    <h3 class="service-title">Gestion Administrative</h3>
-                    <ul class="service-list">
-                        <li>Classement et archivage</li>
-                        <li>Gestion des dossiers</li>
-                        <li>Organisation documentaire</li>
-                        <li>Suivi des courriers</li>
+                    <h3 class="service-title text-xl font-bold mb-4" style="color: #A89F96;">Développement Commercial & Prospection</h3>
+                    <ul class="service-list space-y-3">
+                        <li style="color: #A89F96; font-size: 1rem; line-height: 1.6; font-weight: 500;">Rédaction de devis, gestion des relances et suivi client</li>
+                        <li style="color: #A89F96; font-size: 1rem; line-height: 1.6; font-weight: 500;">Négociation de prestations et accompagnement jusqu'à la signature</li>
+                        <li style="color: #A89F96; font-size: 1rem; line-height: 1.6; font-weight: 500;">Prospection multicanal (phoning, e-mailing, LinkedIn)</li>
+                        <li style="color: #C9A08D; font-size: 1rem; line-height: 1.6; font-weight: 600;">Outils : HubSpot, Notion, Google Workspace</li>
                     </ul>
                 </div>
                 
                 <!-- Service 2 -->
-                <div class="service-card" data-aos="fade-up" data-aos-delay="200">
-                    <div class="service-icon">
-                        <i class="fas fa-file-invoice-dollar"></i>
+                <div class="service-card" data-aos="fade-up" data-aos-delay="200" style="background: #4A4A4A; border: 1px solid rgba(201, 160, 141, 0.2);">
+                    <div class="service-icon" style="background: linear-gradient(135deg, #C9A08D 0%, #4A4A4A 100%);">
+                        <i class="fas fa-bullhorn"></i>
                     </div>
-                    <h3 class="service-title">Facturation & Devis</h3>
-                    <ul class="service-list">
-                        <li>Établissement des factures</li>
-                        <li>Relances clients</li>
-                        <li>Gestion des impayés</li>
-                        <li>Création de devis</li>
+                    <h3 class="service-title text-xl font-bold mb-4" style="color: #A89F96;">Communication Digitale & Réseaux Sociaux</h3>
+                    <ul class="service-list space-y-3">
+                        <li style="color: #A89F96; font-size: 1rem; line-height: 1.6; font-weight: 500;">Création de contenu (visuels, textes, animations)</li>
+                        <li style="color: #A89F96; font-size: 1rem; line-height: 1.6; font-weight: 500;">Planification et publication sur Instagram, Facebook, Google</li>
+                        <li style="color: #A89F96; font-size: 1rem; line-height: 1.6; font-weight: 500;">Suivi des KPI (engagement, conversion, visibilité)</li>
+                        <li style="color: #A89F96; font-size: 1rem; line-height: 1.6; font-weight: 500;">Animation de la communauté et gestion des retours clients</li>
                     </ul>
                 </div>
                 
                 <!-- Service 3 -->
-                <div class="service-card" data-aos="fade-up" data-aos-delay="300">
-                    <div class="service-icon">
-                        <i class="fas fa-calendar-alt"></i>
+                <div class="service-card" data-aos="fade-up" data-aos-delay="300" style="background: #4A4A4A; border: 1px solid rgba(201, 160, 141, 0.2);">
+                    <div class="service-icon" style="background: linear-gradient(135deg, #C9A08D 0%, #4A4A4A 100%);">
+                        <i class="fas fa-headset"></i>
                     </div>
-                    <h3 class="service-title">Gestion des Plannings</h3>
-                    <ul class="service-list">
-                        <li>Suivi des absences</li>
-                        <li>Coordination des équipes</li>
-                        <li>Outils : ZADIG, Excel, Notion</li>
-                        <li>Visites médicales</li>
+                    <h3 class="service-title text-xl font-bold mb-4" style="color: #A89F96;">Relation Client & Support Commercial</h3>
+                    <ul class="service-list space-y-3">
+                        <li style="color: #A89F96; font-size: 1rem; line-height: 1.6; font-weight: 500;">Réponse aux demandes clients et qualification des leads</li>
+                        <li style="color: #A89F96; font-size: 1rem; line-height: 1.6; font-weight: 500;">Coordination avec les équipes internes (logistique, fournisseurs)</li>
+                        <li style="color: #A89F96; font-size: 1rem; line-height: 1.6; font-weight: 500;">Préparation de présentations commerciales et supports de vente</li>
+                        <li style="color: #A89F96; font-size: 1rem; line-height: 1.6; font-weight: 500;">Mise à jour CRM et reporting d'activité</li>
                     </ul>
                 </div>
                 
                 <!-- Service 4 -->
-                <div class="service-card" data-aos="fade-up" data-aos-delay="400">
-                    <div class="service-icon">
-                        <i class="fas fa-headset"></i>
+                <div class="service-card" data-aos="fade-up" data-aos-delay="400" style="background: #4A4A4A; border: 1px solid rgba(201, 160, 141, 0.2);">
+                    <div class="service-icon" style="background: linear-gradient(135deg, #C9A08D 0%, #4A4A4A 100%);">
+                        <i class="fas fa-project-diagram"></i>
                     </div>
-                    <h3 class="service-title">Relation Client</h3>
-                    <ul class="service-list">
-                        <li>Accueil téléphonique</li>
-                        <li>Gestion des demandes</li>
-                        <li>Coordination fournisseurs</li>
-                        <li>Support commercial</li>
-                    </ul>
-                </div>
-                
-                <!-- Service 5 -->
-                <div class="service-card" data-aos="fade-up" data-aos-delay="500">
-                    <div class="service-icon">
-                        <i class="fas fa-chart-bar"></i>
-                    </div>
-                    <h3 class="service-title">Reporting & Tableaux de bord</h3>
-                    <ul class="service-list">
-                        <li>Analyse des données</li>
-                        <li>Création de tableaux de suivi</li>
-                        <li>Support RH</li>
-                        <li>Indicateurs de performance</li>
-                    </ul>
-                </div>
-                
-                <!-- Service 6 -->
-                <div class="service-card" data-aos="fade-up" data-aos-delay="600">
-                    <div class="service-icon">
-                        <i class="fas fa-tasks"></i>
-                    </div>
-                    <h3 class="service-title">Support Opérationnel</h3>
-                    <ul class="service-list">
-                        <li>Gestion des commandes</li>
-                        <li>Suivi des stocks</li>
-                        <li>Coordination logistique</li>
-                        <li>Support aux équipes</li>
+                    <h3 class="service-title text-xl font-bold mb-4" style="color: #A89F96;">Coordination de Projets</h3>
+                    <ul class="service-list space-y-3">
+                        <li style="color: #A89F96; font-size: 1rem; line-height: 1.6; font-weight: 500;">Suivi des campagnes commerciales et reporting</li>
+                        <li style="color: #A89F96; font-size: 1rem; line-height: 1.6; font-weight: 500;">Préparation aux salons et événements professionnels</li>
+                        <li style="color: #A89F96; font-size: 1rem; line-height: 1.6; font-weight: 500;">Collaboration transversale avec les interlocuteurs clés</li>
+                        <li style="color: #A89F96; font-size: 1rem; line-height: 1.6; font-weight: 500;">Analyse de performance et optimisation des actions</li>
                     </ul>
                 </div>
             </div>
@@ -1129,70 +1687,132 @@
     </section>
 
     <!-- Experience & Education Section -->
-    <section id="experience" class="py-20 bg-white">
+    <section id="experience" class="py-20" style="background-color: #4A4A4A;">
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16" data-aos="fade-up">
-                <h2 class="text-3xl font-bold text-gray-800 mb-4">Parcours Professionnel</h2>
-                <div class="w-20 h-1 bg-teal-600 mx-auto"></div>
+                <h2 class="text-3xl font-bold mb-4" style="color: #C9A08D;">Parcours Professionnel</h2>
+                <div class="w-20 h-1 mx-auto" style="background-color: #C9A08D;"></div>
             </div>
             
             <div class="grid md:grid-cols-2 gap-12">
                 <!-- Experience -->
                 <div data-aos="fade-right">
-                    <h3 class="text-2xl font-bold text-gray-800 mb-8 flex items-center">
-                        <i class="fas fa-briefcase text-teal-600 mr-3"></i> Expériences
+                    <h3 class="text-2xl font-bold mb-8 flex items-center" style="color: #A89F96;">
+                        <i class="fas fa-briefcase mr-3" style="color: #C9A08D;"></i> Expériences
                     </h3>
                     
                     <div class="space-y-8">
                         <!-- Exp 1 -->
                         <div class="timeline-item">
-                            <div class="timeline-dot"></div>
-                            <div class="timeline-content">
-                                <h4 class="text-xl font-bold text-gray-800">Digital Waves – Lille</h4>
-                                <p class="text-teal-600">Fondatrice & Responsable Administrative</p>
-                                <p class="text-gray-500 mb-3">2024 – Aujourd'hui</p>
-                                <p class="text-gray-700">
-                                    Création et gestion d'une micro-entreprise spécialisée en social media marketing. Gestion administrative complète, coordination des projets et relation client.
+                            <div class="timeline-dot" style="background-color: #C9A08D;"></div>
+                            <div class="timeline-content" style="border-left: 2px solid rgba(201, 160, 141, 0.3);">
+                                <h4 class="text-xl font-bold" style="color: #A89F96;">Digital Waves – Lille</h4>
+                                <p style="color: #C9A08D;">Consultante Freelance – Social Media & Développement Commercial</p>
+                                <p class="mb-3" style="color: #A89F96;">Depuis 2024</p>
+                                <p class="mb-3" style="color: #A89F96;">
+                                    Fondatrice de ma micro-entreprise spécialisée en marketing digital, j'accompagne des entreprises locales (BTP, restauration) dans leur développement commercial et leur présence en ligne.
                                 </p>
+                                <div class="experience-card">
+                                    <div class="experience-header cursor-pointer flex items-center justify-between px-3 py-2" style="background-color: rgba(201, 160, 141, 0.1); border: 1px solid rgba(201, 160, 141, 0.2); border-radius: 0.75rem;">
+                                        <p class="font-medium m-0" style="color: #A89F96;">Missions clés</p>
+                                        <button class="expand-btn flex-shrink-0" data-target="exp1-details" style="background-color: #C9A08D; color: white; border: none; border-radius: 50%; width: 24px; height: 24px; display: flex; align-items: center; justify-content: center;">
+                                            <i class="fas fa-chevron-down"></i>
+                                        </button>
+                                    </div>
+                                    <div id="exp1-details" class="experience-details">
+                                        <ul class="list-disc pl-5 space-y-1 mt-2" style="color: #A89F96;">
+                                            <li>Création et mise en œuvre de stratégies de communication digitale (Instagram, Facebook, Google)</li>
+                                            <li>Prospection, rédaction de devis et négociation de prestations</li>
+                                            <li>Gestion de la relation client et suivi des résultats (reporting & indicateurs de performance)</li>
+                                            <li>Coordination de projets marketing de A à Z</li>
+                                        </ul>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                         
                         <!-- Exp 2 -->
                         <div class="timeline-item">
-                            <div class="timeline-dot"></div>
-                            <div class="timeline-content">
-                                <h4 class="text-xl font-bold text-gray-800">First Burger – Tourcoing</h4>
-                                <p class="text-teal-600">Assistante de Gestion</p>
-                                <p class="text-gray-500 mb-3">2021 – 2022</p>
-                                <p class="text-gray-700">
-                                    Gestion administrative complète : commandes, fournisseurs, facturation, plannings et suivi des équipes.
+                            <div class="timeline-dot" style="background-color: #C9A08D;"></div>
+                            <div class="timeline-content" style="border-left: 2px solid rgba(201, 160, 141, 0.3);">
+                                <h4 class="text-xl font-bold" style="color: #A89F96;">First Burger – Tourcoing</h4>
+                                <p style="color: #C9A08D;">Assistante de Gestion & Relation Client</p>
+                                <p class="mb-3" style="color: #A89F96;">2021 – 2022</p>
+                                <p class="mb-3" style="color: #A89F96;">
+                                    Bras droit du manager, j'ai assuré le bon fonctionnement administratif et opérationnel de la structure.
                                 </p>
+                                <div class="experience-card">
+                                    <div class="experience-header cursor-pointer flex items-center justify-between px-3 py-2" style="background-color: rgba(201, 160, 141, 0.1); border: 1px solid rgba(201, 160, 141, 0.2); border-radius: 0.75rem;">
+                                        <p class="font-medium m-0" style="color: #A89F96;">Missions clés</p>
+                                        <button class="expand-btn flex-shrink-0" data-target="exp2-details" style="background-color: #C9A08D; color: white; border: none; border-radius: 50%; width: 24px; height: 24px; display: flex; align-items: center; justify-content: center;">
+                                            <i class="fas fa-chevron-down"></i>
+                                        </button>
+                                    </div>
+                                    <div id="exp2-details" class="experience-details">
+                                        <ul class="list-disc pl-5 space-y-1 mt-2" style="color: #A89F96;">
+                                            <li>Planification et gestion d'une équipe de 8 personnes</li>
+                                            <li>Suivi des commandes, gestion des fournisseurs et stocks</li>
+                                            <li>Facturation, relance clients et organisation administrative quotidienne</li>
+                                            <li>Interface directe avec la clientèle et contribution à la fidélisation</li>
+                                        </ul>
+                                    </div>
+                                </div>
                             </div>
                         </div>
 
                         <!-- Exp 3 -->
                         <div class="timeline-item">
-                            <div class="timeline-dot"></div>
-                            <div class="timeline-content">
-                                <h4 class="text-xl font-bold text-gray-800">Nature & Progrès – Cambrai</h4>
-                                <p class="text-teal-600">Assistante Administrative</p>
-                                <p class="text-gray-500 mb-3">2017 – 2018</p>
-                                <p class="text-gray-700">
-                                    Gestion de l'accueil, des agendas, du courrier et organisation d'événements pour cette association.
+                            <div class="timeline-dot" style="background-color: #C9A08D;"></div>
+                            <div class="timeline-content" style="border-left: 2px solid rgba(201, 160, 141, 0.3);">
+                                <h4 class="text-xl font-bold" style="color: #A89F96;">Nature & Progrès – Cambrai</h4>
+                                <p style="color: #C9A08D;">Assistante Administrative polyvalente</p>
+                                <p class="mb-3" style="color: #A89F96;">2017 – 2018</p>
+                                <p class="mb-3" style="color: #A89F96;">
+                                    Soutien administratif au sein d'une association engagée, dans un rôle transversal.
                                 </p>
+                                <div class="experience-card">
+                                    <div class="experience-header cursor-pointer flex items-center justify-between px-3 py-2" style="background-color: rgba(201, 160, 141, 0.1); border: 1px solid rgba(201, 160, 141, 0.2); border-radius: 0.75rem;">
+                                        <p class="font-medium m-0" style="color: #A89F96;">Missions clés</p>
+                                        <button class="expand-btn flex-shrink-0" data-target="exp3-details" style="background-color: #C9A08D; color: white; border: none; border-radius: 50%; width: 24px; height: 24px; display: flex; align-items: center; justify-content: center;">
+                                            <i class="fas fa-chevron-down"></i>
+                                        </button>
+                                    </div>
+                                    <div id="exp3-details" class="experience-details">
+                                        <ul class="list-disc pl-5 space-y-1 mt-2" style="color: #A89F96;">
+                                            <li>Accueil physique et téléphonique, gestion d'agendas</li>
+                                            <li>Suivi logistique d'événements et rédaction de documents internes</li>
+                                            <li>Classement, archivage, gestion du courrier</li>
+                                        </ul>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                         
                         <!-- Exp 4 -->
                         <div class="timeline-item">
-                            <div class="timeline-dot"></div>
-                            <div class="timeline-content">
-                                <h4 class="text-xl font-bold text-gray-800">Indigo (Groupe Laahrichi) – Maroc</h4>
-                                <p class="text-teal-600">Assistante Commerciale</p>
-                                <p class="text-gray-500 mb-3">2017</p>
-                                <p class="text-gray-700">
-                                    Accueil client, prospection commerciale, établissement de devis et suivi des ventes immobilières.
+                            <div class="timeline-dot" style="background-color: #C9A08D;"></div>
+                            <div class="timeline-content" style="border-left: 2px solid rgba(201, 160, 141, 0.3);">
+                                <h4 class="text-xl font-bold" style="color: #A89F96;">Indigo (Groupe Laahrichi) – Meknès</h4>
+                                <p style="color: #C9A08D;">Assistante Commerciale Immobilier</p>
+                                <p class="mb-3" style="color: #A89F96;">2017</p>
+                                <p class="mb-3" style="color: #A89F96;">
+                                    Au sein d'un groupe immobilier, j'ai accompagné les clients dans leur parcours d'achat, depuis la visite jusqu'à la signature.
                                 </p>
+                                <div class="experience-card">
+                                    <div class="experience-header cursor-pointer flex items-center justify-between px-3 py-2" style="background-color: rgba(201, 160, 141, 0.1); border: 1px solid rgba(201, 160, 141, 0.2); border-radius: 0.75rem;">
+                                        <p class="font-medium m-0" style="color: #A89F96;">Missions clés</p>
+                                        <button class="expand-btn flex-shrink-0" data-target="exp4-details" style="background-color: #C9A08D; color: white; border: none; border-radius: 50%; width: 24px; height: 24px; display: flex; align-items: center; justify-content: center;">
+                                            <i class="fas fa-chevron-down"></i>
+                                        </button>
+                                    </div>
+                                    <div id="exp4-details" class="experience-details">
+                                        <ul class="list-disc pl-5 space-y-1 mt-2" style="color: #A89F96;">
+                                            <li>Accueil et orientation client, élaboration des devis et relances</li>
+                                            <li>Présentation d'un appartement témoin et mise en valeur des offres</li>
+                                            <li>Traitement administratif des dossiers de vente</li>
+                                        </ul>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -1200,61 +1820,95 @@
                 
                 <!-- Education -->
                 <div data-aos="fade-up">
-                    <h3 class="text-2xl font-bold text-gray-800 mb-8 flex items-center">
-                        <i class="fas fa-graduation-cap text-teal-600 mr-3"></i> Formation
+                    <h3 class="text-2xl font-bold mb-8 flex items-center" style="color: #A89F96;">
+                        <i class="fas fa-graduation-cap mr-3" style="color: #C9A08D;"></i> Formation
                     </h3>
                     
                     <div class="space-y-8">
                         <!-- Edu 1 -->
                         <div class="timeline-item">
-                            <div class="timeline-dot"></div>
-                            <div class="timeline-content">
-                                <h4 class="text-xl font-bold text-gray-800">Licence Professionnelle</h4>
-                                <p class="text-teal-600">Management et Gestion des Organisations</p>
-                                <p class="text-gray-500 mb-3">Université de Lille – 2021</p>
+                            <div class="timeline-dot" style="background-color: #C9A08D;"></div>
+                            <div class="timeline-content" style="border-left: 2px solid rgba(201, 160, 141, 0.3);">
+                                <h4 class="text-xl font-bold" style="color: #A89F96;">Licence Professionnelle – Management & Gestion des Organisations</h4>
+                                <p style="color: #C9A08D;">Université de Lille</p>
+                                <p class="mb-3" style="color: #A89F96;">2021</p>
+                                <div class="experience-card">
+                                    <div class="experience-header cursor-pointer flex items-center justify-between px-3 py-2" style="background-color: rgba(201, 160, 141, 0.1); border: 1px solid rgba(201, 160, 141, 0.2); border-radius: 0.75rem;">
+                                        <p class="font-medium m-0" style="color: #A89F96;">Détails de la formation</p>
+                                        <button class="expand-btn flex-shrink-0" data-target="edu1-details" style="background-color: #C9A08D; color: white; border: none; border-radius: 50%; width: 24px; height: 24px; display: flex; align-items: center; justify-content: center;">
+                                            <i class="fas fa-chevron-down"></i>
+                                        </button>
+                                    </div>
+                                    <div id="edu1-details" class="experience-details">
+                                        <p class="mt-2" style="color: #A89F96;">Formation complète en gestion, organisation et pilotage des activités d'entreprise, avec une spécialisation en management d'équipes et gestion opérationnelle.</p>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                         
                         <!-- Edu 2 -->
                         <div class="timeline-item">
-                            <div class="timeline-dot"></div>
-                            <div class="timeline-content">
-                                <h4 class="text-xl font-bold text-gray-800">Diplôme de Technicien Spécialisé</h4>
-                                <p class="text-teal-600">Gestion des Entreprises</p>
-                                <p class="text-gray-500 mb-3">OFPPT Maroc – 2014</p>
+                            <div class="timeline-dot" style="background-color: #C9A08D;"></div>
+                            <div class="timeline-content" style="border-left: 2px solid rgba(201, 160, 141, 0.3);">
+                                <h4 class="text-xl font-bold" style="color: #A89F96;">Diplôme Universitaire – Transport & Logistique</h4>
+                                <p style="color: #C9A08D;">Université Mohammed V – Rabat</p>
+                                <p class="mb-3" style="color: #A89F96;">2016</p>
+                                <div class="experience-card">
+                                    <div class="experience-header cursor-pointer flex items-center justify-between px-3 py-2" style="background-color: rgba(201, 160, 141, 0.1); border: 1px solid rgba(201, 160, 141, 0.2); border-radius: 0.75rem;">
+                                        <p class="font-medium m-0" style="color: #A89F96;">Détails de la formation</p>
+                                        <button class="expand-btn flex-shrink-0" data-target="edu2-details" style="background-color: #C9A08D; color: white; border: none; border-radius: 50%; width: 24px; height: 24px; display: flex; align-items: center; justify-content: center;">
+                                            <i class="fas fa-chevron-down"></i>
+                                        </button>
+                                    </div>
+                                    <div id="edu2-details" class="experience-details">
+                                        <p class="mt-2" style="color: #A89F96;">Compétences développées : logistique d'approvisionnement, gestion des flux, optimisation des coûts et organisation du transport multimodal.</p>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                         
                         <!-- Edu 3 -->
                         <div class="timeline-item">
-                            <div class="timeline-dot"></div>
-                            <div class="timeline-content">
-                                <h4 class="text-xl font-bold text-gray-800">Formations Complémentaires</h4>
-                                <p class="text-teal-600">Excel Avancé & Social Media Management</p>
-                                <p class="text-gray-500 mb-3">Meta, Microsoft</p>
+                            <div class="timeline-dot" style="background-color: #C9A08D;"></div>
+                            <div class="timeline-content" style="border-left: 2px solid rgba(201, 160, 141, 0.3);">
+                                <h4 class="text-xl font-bold" style="color: #A89F96;">Diplôme de Technicien Spécialisé – Gestion des Entreprises</h4>
+                                <p style="color: #C9A08D;">OFPPT – Meknès</p>
+                                <p class="mb-3" style="color: #A89F96;">2014</p>
+                                <div class="experience-card">
+                                    <div class="experience-header cursor-pointer flex items-center justify-between px-3 py-2" style="background-color: rgba(201, 160, 141, 0.1); border: 1px solid rgba(201, 160, 141, 0.2); border-radius: 0.75rem;">
+                                        <p class="font-medium m-0" style="color: #A89F96;">Détails de la formation</p>
+                                        <button class="expand-btn flex-shrink-0" data-target="edu3-details" style="background-color: #C9A08D; color: white; border: none; border-radius: 50%; width: 24px; height: 24px; display: flex; align-items: center; justify-content: center;">
+                                            <i class="fas fa-chevron-down"></i>
+                                        </button>
+                                    </div>
+                                    <div id="edu3-details" class="experience-details">
+                                        <p class="mt-2" style="color: #A89F96;">Formation technique orientée gestion administrative, comptabilité, relation client et fonctionnement global d'une PME.</p>
+                                    </div>
                             </div>
                         </div>
                     </div>
                     
-                    <!-- Skills -->
-                    <div class="mt-12">
-                        <h3 class="text-2xl font-bold text-gray-800 mb-6 flex items-center">
-                            <i class="fas fa-tools text-teal-600 mr-3"></i> Outils Maîtrisés
-                        </h3>
-                        
-                        <div class="flex flex-wrap gap-3">
-                            <span class="tool-tag bg-teal-100 text-teal-800 px-3 py-1 rounded-full text-sm">Excel (Avancé)</span>
-                            <span class="tool-tag bg-teal-100 text-teal-800 px-3 py-1 rounded-full text-sm">ZADIG</span>
-                            <span class="tool-tag bg-teal-100 text-teal-800 px-3 py-1 rounded-full text-sm">Notion</span>
-                            <span class="tool-tag bg-teal-100 text-teal-800 px-3 py-1 rounded-full text-sm">ERP</span>
-                            <span class="tool-tag bg-teal-100 text-teal-800 px-3 py-1 rounded-full text-sm">Canva</span>
-                            <span class="tool-tag bg-teal-100 text-teal-800 px-3 py-1 rounded-full text-sm">Google Workspace</span>
-                            <span class="tool-tag bg-teal-100 text-teal-800 px-3 py-1 rounded-full text-sm">Tableaux croisés</span>
-                            <span class="tool-tag bg-teal-100 text-teal-800 px-3 py-1 rounded-full text-sm">Sage</span>
-                            <span class="tool-tag bg-teal-100 text-teal-800 px-3 py-1 rounded-full text-sm">Trello</span>
-                            <span class="tool-tag bg-teal-100 text-teal-800 px-3 py-1 rounded-full text-sm">Zoom</span>
-                            <span class="tool-tag bg-teal-100 text-teal-800 px-3 py-1 rounded-full text-sm">Microsoft Teams</span>
-                            <span class="tool-tag bg-teal-100 text-teal-800 px-3 py-1 rounded-full text-sm">CRM</span>
+                        <!-- Edu 4 -->
+                        <div class="timeline-item">
+                            <div class="timeline-dot" style="background-color: #C9A08D;"></div>
+                            <div class="timeline-content" style="border-left: 2px solid rgba(201, 160, 141, 0.3);">
+                                <h4 class="text-xl font-bold" style="color: #A89F96;">Formations Complémentaires & Certifications</h4>
+                                <div class="experience-card">
+                                    <div class="experience-header cursor-pointer flex items-center justify-between px-3 py-2" style="background-color: rgba(201, 160, 141, 0.1); border: 1px solid rgba(201, 160, 141, 0.2); border-radius: 0.75rem;">
+                                        <p class="font-medium m-0" style="color: #A89F96;">Certifications</p>
+                                        <button class="expand-btn flex-shrink-0" data-target="edu4-details" style="background-color: #C9A08D; color: white; border: none; border-radius: 50%; width: 24px; height: 24px; display: flex; align-items: center; justify-content: center;">
+                                            <i class="fas fa-chevron-down"></i>
+                                        </button>
+                                    </div>
+                                    <div id="edu4-details" class="experience-details">
+                                        <ul class="list-disc pl-5 space-y-2 mt-2" style="color: #A89F96;">
+                                            <li>Meta – Social Media Management (2024)</li>
+                                            <li>Microsoft – Excel Avancé</li>
+                                            <li>Autoformation continue sur Notion, Canva, Google Workspace, outils CRM</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -1263,101 +1917,124 @@
     </section>
 
     <!-- Skills Section -->
-    <section id="skills" class="py-20 bg-gray-50">
+    <section id="skills" class="py-20" style="background: linear-gradient(to bottom, #4A4A4A 0%, #6B6B6B 100%);">
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16" data-aos="fade-up">
-                <h2 class="text-3xl font-bold text-gray-800 mb-4">Compétences</h2>
-                <p class="text-gray-600 max-w-2xl mx-auto">Un ensemble de compétences techniques et humaines développées au fil de mes expériences professionnelles.</p>
-                <div class="w-20 h-1 bg-teal-600 mx-auto mt-4"></div>
+                <h2 class="text-3xl font-bold mb-4" style="color: #C9A08D;">Compétences</h2>
+                <p class="max-w-2xl mx-auto text-lg font-medium" style="color: #B8B8B8;">Un ensemble de compétences techniques et humaines développées au fil de mes expériences professionnelles.</p>
+                <div class="w-20 h-1 mx-auto mt-4" style="background-color: #C9A08D;"></div>
             </div>
             
             <div class="grid md:grid-cols-2 gap-12">
                 <!-- Technical Skills -->
                 <div data-aos="fade-right">
-                    <div class="bg-white rounded-2xl p-8 shadow-sm">
-                        <h3 class="text-2xl font-bold text-gray-800 mb-8 flex items-center">
-                            <i class="fas fa-tools text-teal-600 mr-3"></i>
+                    <div class="rounded-2xl p-8 shadow-sm" style="background: #4A4A4A; border: 1px solid rgba(201, 160, 141, 0.2);">
+                        <h3 class="text-2xl font-bold mb-8 flex items-center" style="color: #A89F96;">
+                            <i class="fas fa-cogs mr-3" style="color: #C9A08D;"></i>
                             Compétences Techniques
                         </h3>
                         
                     <div class="space-y-6">
                             <!-- Skill Card 1 -->
-                            <div class="bg-teal-50 rounded-xl skill-card">
+                            <div class="rounded-xl skill-card" style="background: #4A4A4A; border: 1px solid rgba(201, 160, 141, 0.2);">
                                 <div class="skill-header">
                                     <div class="skill-icon">
-                                        <div class="bg-teal-100 p-3 rounded-lg">
-                                            <i class="fas fa-folder-open text-teal-600 text-xl"></i>
+                                        <div class="p-3 rounded-lg" style="background: rgba(201, 160, 141, 0.2);">
+                                            <i class="fas fa-file-invoice text-xl" style="color: #C9A08D;"></i>
                                         </div>
                                     </div>
-                                    <h4 class="font-semibold text-gray-800 skill-title">Gestion Administrative</h4>
-                                    <button class="expand-btn text-teal-600 hover:text-teal-700 transition-colors" data-target="admin-details">
-                                        <i class="fas fa-chevron-down"></i>
+                                    <h4 class="font-semibold skill-title" style="color: #A89F96;">Gestion Commerciale & Administrative</h4>
+                                    <button class="expand-btn" data-target="admin-details" style="background: linear-gradient(135deg, #C9A08D 0%, #4A4A4A 100%); color: white; border: none; border-radius: 50%; width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 8px rgba(201, 160, 141, 0.2);">
+                                        <i class="fas fa-plus"></i>
                                     </button>
                                 </div>
                                 <div id="admin-details" class="skill-details">
-                                    <p>
-                                        J'ai développé mes compétences en <strong>gestion administrative</strong> en travaillant au sein d'équipes aux besoins variés, où il fallait organiser les dossiers, gérer les documents sensibles, et assurer un suivi rigoureux des procédures.
+                                    <p style="color: #A89F96; line-height: 1.6;">
+                                        Maîtrisée dans mes postes chez First Burger et Indigo : suivi de dossiers clients, traitement administratif, gestion des devis et des relances.
                                     </p>
                                 </div>
                             </div>
 
                             <!-- Skill Card 2 -->
-                            <div class="bg-teal-50 rounded-xl skill-card">
+                            <div class="rounded-xl skill-card" style="background: #4A4A4A; border: 1px solid rgba(201, 160, 141, 0.2);">
                                 <div class="skill-header">
                                     <div class="skill-icon">
-                                        <div class="bg-teal-100 p-3 rounded-lg">
-                                            <i class="fas fa-file-invoice-dollar text-teal-600 text-xl"></i>
+                                        <div class="p-3 rounded-lg" style="background: rgba(201, 160, 141, 0.2);">
+                                            <i class="fas fa-handshake text-xl" style="color: #C9A08D;"></i>
                                         </div>
                                     </div>
-                                    <h4 class="font-semibold text-gray-800 skill-title">Facturation & Devis</h4>
-                                    <button class="expand-btn text-teal-600 hover:text-teal-700 transition-colors" data-target="facturation-details">
-                                        <i class="fas fa-chevron-down"></i>
+                                    <h4 class="font-semibold skill-title" style="color: #A89F96;">Développement Commercial</h4>
+                                    <button class="expand-btn" data-target="commercial-details" style="background: linear-gradient(135deg, #C9A08D 0%, #4A4A4A 100%); color: white; border: none; border-radius: 50%; width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 8px rgba(201, 160, 141, 0.2);">
+                                        <i class="fas fa-plus"></i>
                                     </button>
                                 </div>
-                                <div id="facturation-details" class="skill-details">
-                                    <p>
-                                        Chez First Burger et Indigo, j'étais responsable de l'émission des <strong>devis</strong>, du suivi des <strong>acomptes</strong> et de la <strong>facturation</strong>. J'ai également appris à relancer les impayés avec diplomatie.
+                                <div id="commercial-details" class="skill-details">
+                                    <p style="color: #A89F96; line-height: 1.6;">
+                                        Expérience en prospection, négociation, suivi client et reporting dans le cadre de ma micro-entreprise Digital Waves et de prestations freelance B2B.
                                     </p>
                                 </div>
                             </div>
 
                             <!-- Skill Card 3 -->
-                            <div class="bg-teal-50 rounded-xl skill-card">
+                            <div class="rounded-xl skill-card" style="background: #4A4A4A; border: 1px solid rgba(201, 160, 141, 0.2);">
                                 <div class="skill-header">
                                     <div class="skill-icon">
-                                        <div class="bg-teal-100 p-3 rounded-lg">
-                                            <i class="fas fa-calendar-check text-teal-600 text-xl"></i>
+                                        <div class="p-3 rounded-lg" style="background: rgba(201, 160, 141, 0.2);">
+                                            <i class="fas fa-chart-bar text-xl" style="color: #C9A08D;"></i>
                                         </div>
                                     </div>
-                                    <h4 class="font-semibold text-gray-800 skill-title">Gestion des Plannings</h4>
-                                    <button class="expand-btn text-teal-600 hover:text-teal-700 transition-colors" data-target="planning-details">
-                                        <i class="fas fa-chevron-down"></i>
+                                    <h4 class="font-semibold skill-title" style="color: #A89F96;">Analyse & Reporting</h4>
+                                    <button class="expand-btn" data-target="analysis-details" style="background: linear-gradient(135deg, #C9A08D 0%, #4A4A4A 100%); color: white; border: none; border-radius: 50%; width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 8px rgba(201, 160, 141, 0.2);">
+                                        <i class="fas fa-plus"></i>
                                     </button>
                                 </div>
-                                <div id="planning-details" class="skill-details">
-                                    <p>
-                                        J'ai géré les plannings d'équipe, les congés et les absences, souvent avec des outils comme <strong>Excel</strong> ou <strong>ZADIG</strong>. J'ai appris à équilibrer les contraintes des équipes et les besoins opérationnels.
+                                <div id="analysis-details" class="skill-details">
+                                    <p style="color: #A89F96; line-height: 1.6;">
+                                        Création de tableaux de bord (Google Sheets / Excel), analyse des résultats commerciaux et suivi des KPI pour optimiser les actions marketing & ventes.
                                     </p>
                                 </div>
                         </div>
 
                             <!-- Skill Card 4 -->
-                            <div class="bg-teal-50 rounded-xl skill-card">
+                            <div class="rounded-xl skill-card" style="background: #4A4A4A; border: 1px solid rgba(201, 160, 141, 0.2);">
                                 <div class="skill-header">
                                     <div class="skill-icon">
-                                        <div class="bg-teal-100 p-3 rounded-lg">
-                                            <i class="fas fa-laptop-code text-teal-600 text-xl"></i>
+                                        <div class="p-3 rounded-lg" style="background: rgba(201, 160, 141, 0.2);">
+                                            <i class="fas fa-tasks text-xl" style="color: #C9A08D;"></i>
                             </div>
                             </div>
-                                    <h4 class="font-semibold text-gray-800 skill-title">Outils Numériques</h4>
-                                    <button class="expand-btn text-teal-600 hover:text-teal-700 transition-colors" data-target="tools-details">
-                                        <i class="fas fa-chevron-down"></i>
+                                    <h4 class="font-semibold skill-title" style="color: #A89F96;">Organisation & Gestion de Projets</h4>
+                                    <button class="expand-btn" data-target="organization-details" style="background: linear-gradient(135deg, #C9A08D 0%, #4A4A4A 100%); color: white; border: none; border-radius: 50%; width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 8px rgba(201, 160, 141, 0.2);">
+                                        <i class="fas fa-plus"></i>
+                                    </button>
+                                </div>
+                                <div id="organization-details" class="skill-details">
+                                    <p style="color: #A89F96; line-height: 1.6;">
+                                        Coordination de missions freelance, suivi de production de contenus et d'actions commerciales de A à Z. Compétences développées en autonomie.
+                                    </p>
+                                </div>
+                            </div>
+
+                            <!-- Skill Card 5 -->
+                            <div class="rounded-xl skill-card" style="background: #4A4A4A; border: 1px solid rgba(201, 160, 141, 0.2);">
+                                <div class="skill-header">
+                                    <div class="skill-icon">
+                                        <div class="p-3 rounded-lg" style="background: rgba(201, 160, 141, 0.2);">
+                                            <i class="fas fa-laptop-code text-xl" style="color: #C9A08D;"></i>
+                            </div>
+                            </div>
+                                    <h4 class="font-semibold skill-title" style="color: #A89F96;">Outils Digitaux & CRM</h4>
+                                    <button class="expand-btn" data-target="tools-details" style="background: linear-gradient(135deg, #C9A08D 0%, #4A4A4A 100%); color: white; border: none; border-radius: 50%; width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 8px rgba(201, 160, 141, 0.2);">
+                                        <i class="fas fa-plus"></i>
                                     </button>
                                 </div>
                                 <div id="tools-details" class="skill-details">
-                                    <p>
-                                        Je me suis formée sur des outils comme <strong>Excel</strong>, <strong>Canva</strong>, <strong>Notion</strong>, <strong>Google Workspace</strong> ou <strong>Meta Business Suite</strong>. Je les utilise au quotidien pour organiser mes missions et créer des tableaux de bord.
-                                    </p>
+                                    <p style="color: #A89F96; line-height: 1.6;"><strong style="color: #C9A08D;">Bonne maîtrise de :</strong></p>
+                                    <ul class="mt-2 space-y-1">
+                                        <li style="color: #A89F96;">Notion, Excel, Canva, Google Workspace</li>
+                                        <li style="color: #A89F96;">Utilisation d'ERP/CRM pour gestion clients, devis et communication</li>
+                                        <li style="color: #A89F96;">Réseaux sociaux (Meta Suite, Instagram, Facebook, Google My Business)</li>
+                                    </ul>
                                 </div>
                             </div>
                         </div>
@@ -1365,105 +2042,92 @@
                 </div>
 
                 <!-- Soft Skills -->
-                <div data-aos="fade-up" data-aos-anchor-placement="bottom-bottom">
-                    <div class="bg-white rounded-2xl p-8 shadow-sm">
-                        <h3 class="text-2xl font-bold text-gray-800 mb-8 flex items-center">
-                            <i class="fas fa-users text-teal-600 mr-3"></i>
+                <div data-aos="fade-down">
+                    <div class="rounded-2xl p-8 shadow-sm" style="background: #4A4A4A; border: 1px solid rgba(201, 160, 141, 0.2);">
+                        <h3 class="text-2xl font-bold mb-8 flex items-center" style="color: #A89F96;">
+                            <i class="fas fa-users mr-3" style="color: #C9A08D;"></i>
                             Compétences Humaines
                         </h3>
 
                         <div class="space-y-6">
                             <!-- Skill Card 1 -->
-                            <div class="bg-teal-50 rounded-xl skill-card">
+                            <div class="rounded-xl skill-card" style="background: #4A4A4A; border: 1px solid rgba(201, 160, 141, 0.2);">
                                 <div class="skill-header">
                                     <div class="skill-icon">
-                                        <div class="bg-teal-100 p-3 rounded-lg">
-                                            <i class="fas fa-headset text-teal-600 text-xl"></i>
+                                        <div class="p-3 rounded-lg" style="background: rgba(201, 160, 141, 0.2);">
+                                            <i class="fas fa-comments text-xl" style="color: #C9A08D;"></i>
                                         </div>
                                     </div>
-                                    <h4 class="font-semibold text-gray-800 skill-title">Relation Client</h4>
-                                    <button class="expand-btn text-teal-600 hover:text-teal-700 transition-colors" data-target="client-details">
-                                        <i class="fas fa-chevron-down"></i>
+                                    <h4 class="font-semibold skill-title" style="color: #A89F96;">Communication Professionnelle</h4>
+                                    <button class="expand-btn" data-target="communication-details" style="background: linear-gradient(135deg, #C9A08D 0%, #4A4A4A 100%); color: white; border: none; border-radius: 50%; width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 8px rgba(201, 160, 141, 0.2);">
+                                        <i class="fas fa-plus"></i>
                                     </button>
                                 </div>
-                                <div id="client-details" class="skill-details">
-                                    <p>
-                                        J'ai toujours eu à cœur de créer un lien de confiance avec les clients. Être à l'écoute, claire et réactive fait partie de mon approche naturelle.
+                                <div id="communication-details" class="skill-details">
+                                    <p style="color: #A89F96; line-height: 1.6;">
+                                        Affinée à travers les échanges clients/fournisseurs, la rédaction de contenus digitaux, les présentations commerciales et les réponses aux demandes entrantes.
                                     </p>
                                 </div>
                             </div>
                             
                             <!-- Skill Card 2 -->
-                            <div class="bg-teal-50 rounded-xl skill-card">
+                            <div class="rounded-xl skill-card" style="background: #4A4A4A; border: 1px solid rgba(201, 160, 141, 0.2);">
                                 <div class="skill-header">
                                     <div class="skill-icon">
-                                        <div class="bg-teal-100 p-3 rounded-lg">
-                                            <i class="fas fa-comments text-teal-600 text-xl"></i>
+                                        <div class="p-3 rounded-lg" style="background: rgba(201, 160, 141, 0.2);">
+                                            <i class="fas fa-handshake text-xl" style="color: #C9A08D;"></i>
                                         </div>
                                     </div>
-                                    <h4 class="font-semibold text-gray-800 skill-title">Communication</h4>
-                                    <button class="expand-btn text-teal-600 hover:text-teal-700 transition-colors" data-target="communication-details">
-                                        <i class="fas fa-chevron-down"></i>
+                                    <h4 class="font-semibold skill-title" style="color: #A89F96;">Relation Client & Sens du service</h4>
+                                    <button class="expand-btn" data-target="client-details" style="background: linear-gradient(135deg, #C9A08D 0%, #4A4A4A 100%); color: white; border: none; border-radius: 50%; width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 8px rgba(201, 160, 141, 0.2);">
+                                        <i class="fas fa-plus"></i>
                                     </button>
                                 </div>
-                                <div id="communication-details" class="skill-details">
-                                    <p>
-                                        Travailler dans différents environnements m'a appris à adapter ma communication à chaque interlocuteur. Je veille à ce que chaque message soit compréhensible et professionnel.
+                                <div id="client-details" class="skill-details">
+                                    <p style="color: #A89F96; line-height: 1.6;">
+                                        Solide expérience dans l'accompagnement client (restauration, immobilier, prestations freelance), avec un haut niveau d'écoute, de réactivité et de suivi.
                                     </p>
                                 </div>
                         </div>
 
                             <!-- Skill Card 3 -->
-                            <div class="bg-teal-50 rounded-xl skill-card">
+                            <div class="rounded-xl skill-card" style="background: #4A4A4A; border: 1px solid rgba(201, 160, 141, 0.2);">
                                 <div class="skill-header">
                                     <div class="skill-icon">
-                                        <div class="bg-teal-100 p-3 rounded-lg">
-                                            <i class="fas fa-user-check text-teal-600 text-xl"></i>
+                                        <div class="p-3 rounded-lg" style="background: rgba(201, 160, 141, 0.2);">
+                                            <i class="fas fa-user-check text-xl" style="color: #C9A08D;"></i>
                                         </div>
                                     </div>
-                                    <h4 class="font-semibold text-gray-800 skill-title">Autonomie</h4>
-                                    <button class="expand-btn text-teal-600 hover:text-teal-700 transition-colors" data-target="autonomie-details">
-                                        <i class="fas fa-chevron-down"></i>
+                                    <h4 class="font-semibold skill-title" style="color: #A89F96;">Autonomie & Prise d'initiative</h4>
+                                    <button class="expand-btn" data-target="autonomie-details" style="background: linear-gradient(135deg, #C9A08D 0%, #4A4A4A 100%); color: white; border: none; border-radius: 50%; width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 8px rgba(201, 160, 141, 0.2);">
+                                        <i class="fas fa-plus"></i>
                                     </button>
                                 </div>
                                 <div id="autonomie-details" class="skill-details">
-                                    <p>
-                                        Lancer ma micro-entreprise m'a appris à être proactive, à chercher des solutions et à gérer les urgences sans attendre d'instruction, tout en restant collaborative.
+                                    <p style="color: #A89F96; line-height: 1.6;">
+                                        Développée en tant que freelance : gestion complète des projets, priorisation, organisation quotidienne et adaptation rapide à chaque mission.
                                     </p>
                                 </div>
                             </div>
 
                             <!-- Skill Card 4 -->
-                            <div class="bg-teal-50 rounded-xl skill-card">
+                            <div class="rounded-xl skill-card" style="background: #4A4A4A; border: 1px solid rgba(201, 160, 141, 0.2);">
                                 <div class="skill-header">
                                     <div class="skill-icon">
-                                        <div class="bg-teal-100 p-3 rounded-lg">
-                                            <i class="fas fa-check-double text-teal-600 text-xl"></i>
+                                        <div class="p-3 rounded-lg" style="background: rgba(201, 160, 141, 0.2);">
+                                            <i class="fas fa-check-double text-xl" style="color: #C9A08D;"></i>
                                         </div>
                                     </div>
-                                    <h4 class="font-semibold text-gray-800 skill-title">Rigueur</h4>
-                                    <button class="expand-btn text-teal-600 hover:text-teal-700 transition-colors" data-target="rigueur-details">
-                                        <i class="fas fa-chevron-down"></i>
+                                    <h4 class="font-semibold skill-title" style="color: #A89F96;">Rigueur & Fiabilité</h4>
+                                    <button class="expand-btn" data-target="rigueur-details" style="background: linear-gradient(135deg, #C9A08D 0%, #4A4A4A 100%); color: white; border: none; border-radius: 50%; width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 8px rgba(201, 160, 141, 0.2);">
+                                        <i class="fas fa-plus"></i>
                                     </button>
                                 </div>
                                 <div id="rigueur-details" class="skill-details">
-                                    <p>
-                                        Dans toutes mes expériences, la rigueur était essentielle. J'ai appris à vérifier, anticiper, et documenter chaque tâche, car dans l'administratif, la précision fait la différence.
+                                    <p style="color: #A89F96; line-height: 1.6;">
+                                        Exigée dans toutes mes expériences : tenue des délais, exactitude des données clients, respect des procédures et suivi de la facturation.
                                     </p>
                                 </div>
-                            </div>
-                        </div>
-
-                        <!-- Additional Skills -->
-                        <div class="mt-8">
-                            <h4 class="font-semibold text-gray-800 mb-4">Points Forts</h4>
-                            <div class="flex flex-wrap gap-3">
-                                <span class="tool-tag bg-teal-100 text-teal-800 px-3 py-1 rounded-full text-sm">Organisation</span>
-                                <span class="tool-tag bg-teal-100 text-teal-800 px-3 py-1 rounded-full text-sm">Adaptabilité</span>
-                                <span class="tool-tag bg-teal-100 text-teal-800 px-3 py-1 rounded-full text-sm">Travail d'équipe</span>
-                                <span class="tool-tag bg-teal-100 text-teal-800 px-3 py-1 rounded-full text-sm">Résolution de problèmes</span>
-                                <span class="tool-tag bg-teal-100 text-teal-800 px-3 py-1 rounded-full text-sm">Gestion du stress</span>
-                                <span class="tool-tag bg-teal-100 text-teal-800 px-3 py-1 rounded-full text-sm">Leadership</span>
                             </div>
                         </div>
                     </div>
@@ -1473,95 +2137,95 @@
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="py-20 bg-gradient-to-r from-gray-50 to-teal-50">
+    <section id="contact" class="py-20" style="background: linear-gradient(to bottom, #6B6B6B 0%, #4A4A4A 100%);">
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16" data-aos="fade-up">
-                <h2 class="text-4xl font-bold text-gray-800 mb-4">Contactez-moi</h2>
-                <p class="text-gray-600 max-w-2xl mx-auto">Disponible pour des missions en freelance ou un CDI dans la région lilloise.</p>
-                <div class="w-24 h-1 bg-teal-600 mx-auto mt-4"></div>
+                <h2 class="text-4xl font-bold mb-4" style="color: #C9A08D;">Contactez-moi</h2>
+                <p class="max-w-2xl mx-auto" style="color: #A89F96;">Disponible pour des missions en freelance ou un CDI dans la région lilloise.</p>
+                <div class="w-24 h-1 mx-auto mt-4" style="background-color: #C9A08D;"></div>
             </div>
             
             <div class="flex flex-col md:flex-row gap-8">
                 <div class="md:w-1/2" data-aos="fade-right">
-                    <div class="bg-white rounded-2xl p-8 h-full shadow-sm hover:shadow-md transition-all duration-300">
-                        <h3 class="text-2xl font-bold text-gray-800 mb-8 flex items-center">
-                            <i class="fas fa-address-card text-teal-600 mr-3"></i>
+                    <div class="rounded-2xl p-8 h-full shadow-sm hover:shadow-md transition-all duration-300" style="background: #4A4A4A; border: 1px solid rgba(201, 160, 141, 0.2);">
+                        <h3 class="text-2xl font-bold mb-8 flex items-center" style="color: #A89F96;">
+                            <i class="fas fa-address-card mr-3" style="color: #C9A08D;"></i>
                             Coordonnées
                         </h3>
                         
                         <div class="space-y-6">
                             <div class="flex items-start group">
-                                <div class="bg-teal-50 p-4 rounded-xl mr-4 group-hover:bg-teal-100 transition-colors duration-300">
-                                    <i class="fas fa-envelope text-teal-600 text-xl"></i>
+                                <div class="p-4 rounded-xl mr-4 transition-colors duration-300" style="background: rgba(201, 160, 141, 0.1);">
+                                    <i class="fas fa-envelope text-xl" style="color: #C9A08D;"></i>
                                 </div>
                                 <div>
-                                    <h4 class="font-semibold text-gray-800 mb-1">Email</h4>
-                                    <p class="text-gray-600 group-hover:text-teal-600 transition-colors duration-300">imanezerouali0@gmail.com</p>
+                                    <h4 class="font-semibold mb-1" style="color: #A89F96;">Email</h4>
+                                    <p class="transition-colors duration-300" style="color: #A89F96;">imanezerouali0@gmail.com</p>
                                 </div>
                             </div>
                             
                             <div class="flex items-start group">
-                                <div class="bg-teal-50 p-4 rounded-xl mr-4 group-hover:bg-teal-100 transition-colors duration-300">
-                                    <i class="fas fa-phone-alt text-teal-600 text-xl"></i>
+                                <div class="p-4 rounded-xl mr-4 transition-colors duration-300" style="background: rgba(201, 160, 141, 0.1);">
+                                    <i class="fas fa-phone-alt text-xl" style="color: #C9A08D;"></i>
                                 </div>
                                 <div>
-                                    <h4 class="font-semibold text-gray-800 mb-1">Téléphone</h4>
-                                    <p class="text-gray-600 group-hover:text-teal-600 transition-colors duration-300">06 79 10 08 52</p>
+                                    <h4 class="font-semibold mb-1" style="color: #A89F96;">Téléphone</h4>
+                                    <p class="transition-colors duration-300" style="color: #A89F96;">06 79 10 08 52</p>
                             </div>
                         </div>
 
                             <div class="flex items-start group">
-                                <div class="bg-teal-50 p-4 rounded-xl mr-4 group-hover:bg-teal-100 transition-colors duration-300">
-                                    <i class="fab fa-linkedin-in text-teal-600 text-xl"></i>
+                                <div class="p-4 rounded-xl mr-4 transition-colors duration-300" style="background: rgba(201, 160, 141, 0.1);">
+                                    <i class="fab fa-linkedin-in text-xl" style="color: #C9A08D;"></i>
                                 </div>
                                 <div>
-                                    <h4 class="font-semibold text-gray-800 mb-1">LinkedIn</h4>
-                                    <p class="text-gray-600 group-hover:text-teal-600 transition-colors duration-300">Imaane Zerouali</p>
+                                    <h4 class="font-semibold mb-1" style="color: #A89F96;">LinkedIn</h4>
+                                    <p class="transition-colors duration-300" style="color: #A89F96;">Imaane Zerouali</p>
                             </div>
                         </div>
 
                             <div class="flex items-start group">
-                                <div class="bg-teal-50 p-4 rounded-xl mr-4 group-hover:bg-teal-100 transition-colors duration-300">
-                                    <i class="fas fa-map-marker-alt text-teal-600 text-xl"></i>
+                                <div class="p-4 rounded-xl mr-4 transition-colors duration-300" style="background: rgba(201, 160, 141, 0.1);">
+                                    <i class="fas fa-map-marker-alt text-xl" style="color: #C9A08D;"></i>
                             </div>
                                 <div>
-                                    <h4 class="font-semibold text-gray-800 mb-1">Zone d'intervention</h4>
-                                    <p class="text-gray-600 group-hover:text-teal-600 transition-colors duration-300">Lille et sa métropole</p>
+                                    <h4 class="font-semibold mb-1" style="color: #A89F96;">Zone d'intervention</h4>
+                                    <p class="transition-colors duration-300" style="color: #A89F96;">Lille et sa métropole</p>
                         </div>
                     </div>
                 </div>
                         
-                        <div class="mt-8 p-6 bg-teal-50 rounded-xl">
-                            <h4 class="font-semibold text-gray-800 mb-2 flex items-center">
-                                <i class="fas fa-clock text-teal-600 mr-2"></i>
+                        <div class="mt-8 p-6 rounded-xl" style="background: rgba(201, 160, 141, 0.1);">
+                            <h4 class="font-semibold mb-2 flex items-center" style="color: #A89F96;">
+                                <i class="fas fa-clock mr-2" style="color: #C9A08D;"></i>
                                 Disponibilités
                             </h4>
-                            <p class="text-gray-600">En recherche active pour un CDI ou des missions freelance.</p>
+                            <p style="color: #A89F96;">En recherche active pour un CDI ou des missions freelance.</p>
             </div>
         </div>
                 </div>
                 
                 <div class="md:w-1/2" data-aos="fade-up">
-                    <form class="bg-white rounded-2xl p-8 h-full shadow-sm hover:shadow-md transition-all duration-300">
-                        <h3 class="text-2xl font-bold text-gray-800 mb-8 flex items-center">
-                            <i class="fas fa-paper-plane text-teal-600 mr-3"></i>
+                    <form class="rounded-2xl p-8 h-full shadow-sm hover:shadow-md transition-all duration-300" style="background: #4A4A4A; border: 1px solid rgba(201, 160, 141, 0.2);">
+                        <h3 class="text-2xl font-bold mb-8 flex items-center" style="color: #A89F96;">
+                            <i class="fas fa-paper-plane mr-3" style="color: #C9A08D;"></i>
                             Envoyez-moi un message
                         </h3>
                         
                         <div class="space-y-6">
                             <div class="group">
-                                <label for="name" class="block text-gray-700 mb-2 font-medium group-hover:text-teal-600 transition-colors duration-300">Nom complet *</label>
-                                <input type="text" id="name" required class="form-input focus:border-teal-600 focus:ring-2 focus:ring-teal-200">
+                                <label for="name" class="block mb-2 font-medium transition-colors duration-300" style="color: #A89F96;">Nom complet *</label>
+                                <input type="text" id="name" required class="form-input w-full p-3 rounded-lg border-2 transition-all duration-300" style="background: rgba(201, 160, 141, 0.1); border-color: rgba(201, 160, 141, 0.2); color: #A89F96;" onfocus="this.style.borderColor='#C9A08D'; this.style.boxShadow='0 0 0 3px rgba(201, 160, 141, 0.1)'" onblur="this.style.borderColor='rgba(201, 160, 141, 0.2)'; this.style.boxShadow='none'">
                             </div>
                             
                             <div class="group">
-                                <label for="email" class="block text-gray-700 mb-2 font-medium group-hover:text-teal-600 transition-colors duration-300">Email *</label>
-                                <input type="email" id="email" required class="form-input focus:border-teal-600 focus:ring-2 focus:ring-teal-200">
+                                <label for="email" class="block mb-2 font-medium transition-colors duration-300" style="color: #A89F96;">Email *</label>
+                                <input type="email" id="email" required class="form-input w-full p-3 rounded-lg border-2 transition-all duration-300" style="background: rgba(201, 160, 141, 0.1); border-color: rgba(201, 160, 141, 0.2); color: #A89F96;" onfocus="this.style.borderColor='#C9A08D'; this.style.boxShadow='0 0 0 3px rgba(201, 160, 141, 0.1)'" onblur="this.style.borderColor='rgba(201, 160, 141, 0.2)'; this.style.boxShadow='none'">
                             </div>
                             
                             <div class="group">
-                                <label for="subject" class="block text-gray-700 mb-2 font-medium group-hover:text-teal-600 transition-colors duration-300">Sujet</label>
-                                <select id="subject" class="form-select focus:border-teal-600 focus:ring-2 focus:ring-teal-200">
+                                <label for="subject" class="block mb-2 font-medium transition-colors duration-300" style="color: #A89F96;">Sujet</label>
+                                <select id="subject" class="form-select w-full p-3 rounded-lg border-2 transition-all duration-300" style="background: rgba(201, 160, 141, 0.1); border-color: rgba(201, 160, 141, 0.2); color: #A89F96;" onfocus="this.style.borderColor='#C9A08D'; this.style.boxShadow='0 0 0 3px rgba(201, 160, 141, 0.1)'" onblur="this.style.borderColor='rgba(201, 160, 141, 0.2)'; this.style.boxShadow='none'">
                                     <option value="">Sélectionnez une option</option>
                                     <option value="freelance">Mission freelance</option>
                                     <option value="cdi">Opportunité CDI</option>
@@ -1571,11 +2235,11 @@
                             </div>
                             
                             <div class="group">
-                                <label for="message" class="block text-gray-700 mb-2 font-medium group-hover:text-teal-600 transition-colors duration-300">Message *</label>
-                                <textarea id="message" rows="5" required class="form-textarea focus:border-teal-600 focus:ring-2 focus:ring-teal-200"></textarea>
+                                <label for="message" class="block mb-2 font-medium transition-colors duration-300" style="color: #A89F96;">Message *</label>
+                                <textarea id="message" rows="5" required class="form-textarea w-full p-3 rounded-lg border-2 transition-all duration-300 resize-vertical min-h-120" style="background: rgba(201, 160, 141, 0.1); border-color: rgba(201, 160, 141, 0.2); color: #A89F96; min-height: 120px;" onfocus="this.style.borderColor='#C9A08D'; this.style.boxShadow='0 0 0 3px rgba(201, 160, 141, 0.1)'" onblur="this.style.borderColor='rgba(201, 160, 141, 0.2)'; this.style.boxShadow='none'"></textarea>
                             </div>
                             
-                            <button type="submit" class="btn btn-primary w-full group">
+                            <button type="submit" class="w-full group inline-flex items-center justify-center px-6 py-3 font-medium rounded-lg transition-all duration-300 transform hover:scale-105" style="background: linear-gradient(135deg, #C9A08D 0%, #A89F96 100%); color: white; box-shadow: 0 4px 12px rgba(201, 160, 141, 0.2);" onmouseover="this.style.transform='translateY(-2px) scale(1.02)'; this.style.boxShadow='0 6px 16px rgba(201, 160, 141, 0.3)'" onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='0 4px 12px rgba(201, 160, 141, 0.2)'">
                                 <i class="fas fa-paper-plane mr-2 group-hover:translate-x-1 transition-transform duration-300"></i>
                                 Envoyer le message
                             </button>
@@ -1587,35 +2251,35 @@
     </section>
 
     <!-- Footer -->
-    <footer class="bg-gray-800 text-white py-8">
+    <footer class="py-8" style="background: linear-gradient(to bottom, #4A4A4A 0%, #3A3A3A 100%);">
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex flex-col md:flex-row justify-between items-center">
                 <div class="mb-4 md:mb-0">
                     <a href="#about" class="brand-container">
-                        <div class="brand-logo">
+                        <div class="brand-logo" style="background: linear-gradient(135deg, #C9A08D 0%, #A89F96 100%); box-shadow: 0 2px 8px rgba(201, 160, 141, 0.3);">
                             <span class="brand-logo-text">IZ</span>
                         </div>
-                        <span class="brand-name text-white">Imane Zerouali</span>
+                        <span class="brand-name" style="color: #A89F96; transition: all 0.3s ease;" onmouseover="this.style.color='#C9A08D'" onmouseout="this.style.color='#A89F96'">Imane Zerouali</span>
                     </a>
-                    <p class="text-gray-400 text-sm mt-2">Chargée Administrative & Commerciale</p>
+                    <p class="text-sm mt-2" style="color: #A89F96;">Chargée Administrative & Commerciale</p>
                 </div>
                 
                 <div class="flex space-x-4">
-                    <button id="copy-email" class="social-link">
+                    <button id="copy-email" class="social-link" style="background: rgba(201, 160, 141, 0.1); color: #C9A08D; border-radius: 0.75rem; width: 2.5rem; height: 2.5rem; display: flex; align-items: center; justify-content: center; transition: all 0.3s ease;" onmouseover="this.style.background='#C9A08D'; this.style.color='white'; this.style.transform='translateY(-2px)'" onmouseout="this.style.background='rgba(201, 160, 141, 0.1)'; this.style.color='#C9A08D'; this.style.transform='translateY(0)'">
                         <i class="fas fa-envelope"></i>
                     </button>
-                    <button id="copy-phone" class="social-link">
+                    <button id="copy-phone" class="social-link" style="background: rgba(201, 160, 141, 0.1); color: #C9A08D; border-radius: 0.75rem; width: 2.5rem; height: 2.5rem; display: flex; align-items: center; justify-content: center; transition: all 0.3s ease;" onmouseover="this.style.background='#C9A08D'; this.style.color='white'; this.style.transform='translateY(-2px)'" onmouseout="this.style.background='rgba(201, 160, 141, 0.1)'; this.style.color='#C9A08D'; this.style.transform='translateY(0)'">
                         <i class="fas fa-phone-alt"></i>
                     </button>
-                    <a href="https://linkedin.com/in/imaane-z-erouali" target="_blank" class="social-link">
+                    <a href="https://linkedin.com/in/imaane-z-erouali" target="_blank" class="social-link" style="background: rgba(201, 160, 141, 0.1); color: #C9A08D; border-radius: 0.75rem; width: 2.5rem; height: 2.5rem; display: flex; align-items: center; justify-content: center; transition: all 0.3s ease;" onmouseover="this.style.background='#C9A08D'; this.style.color='white'; this.style.transform='translateY(-2px)'" onmouseout="this.style.background='rgba(201, 160, 141, 0.1)'; this.style.color='#C9A08D'; this.style.transform='translateY(0)'">
                         <i class="fab fa-linkedin-in"></i>
                     </a>
                 </div>
             </div>
             
-            <div class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400 text-sm">
-                <p>Disponible pour une collaboration en CDI ou en freelance – Lille et métropole</p>
-                <p class="mt-2">&copy; 2025 Imane Zerouali. Tous droits réservés.</p>
+            <div class="mt-8 pt-8 text-center text-sm" style="border-top: 1px solid rgba(201, 160, 141, 0.2);">
+                <p style="color: #A89F96;">Disponible pour une collaboration en CDI ou en freelance – Lille et métropole</p>
+                <p class="mt-2" style="color: #A89F96;">&copy; 2025 Imane Zerouali. Tous droits réservés.</p>
             </div>
         </div>
     </footer>
@@ -1639,6 +2303,8 @@
         <i class="fas fa-exclamation-circle"></i>
         <span>Une erreur est survenue. Veuillez réessayer.</span>
     </div>
+
+  
 
     <script>
         // Initialize AOS
@@ -1664,7 +2330,7 @@
 
         // Update active nav link on scroll
         const sections = document.querySelectorAll('section[id]');
-        const navLinks = document.querySelectorAll('.nav-link');
+        const navLinks = document.querySelectorAll('.nav-link-custom');
 
         function updateActiveLink() {
             const scrollY = window.pageYOffset;
@@ -1723,7 +2389,7 @@
             });
         });
 
-        // Form submission (prevent default for demo)
+        // Form submission handling
         const contactForm = document.querySelector('form');
         const loadingOverlay = document.getElementById('loading-overlay');
         const successAlert = document.getElementById('success-alert');
@@ -1752,7 +2418,6 @@
             contactForm.addEventListener('submit', async function(e) {
                 e.preventDefault();
                 
-                // Get form data
                 const formData = {
                     name: document.getElementById('name').value,
                     email: document.getElementById('email').value,
@@ -1817,10 +2482,71 @@
             });
         });
 
-        // Update the expand/collapse functionality
+        // Updated expandable sections functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const expandableHeaders = document.querySelectorAll('.experience-header');
+            let currentlyExpanded = null;
+
+            expandableHeaders.forEach(header => {
+                header.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const expandBtn = this.querySelector('.expand-btn');
+                    const targetId = expandBtn.getAttribute('data-target');
+                    const targetElement = document.getElementById(targetId);
+                    const wasExpanded = this.classList.contains('active');
+
+                    // Close currently expanded section if exists
+                    if (currentlyExpanded && currentlyExpanded !== targetElement) {
+                        const prevHeader = currentlyExpanded.previousElementSibling;
+                        currentlyExpanded.classList.remove('expanded');
+                        prevHeader.classList.remove('active');
+                        currentlyExpanded = null;
+                    }
+
+                    // Toggle clicked section
+                    if (wasExpanded) {
+                        this.classList.remove('active');
+                        targetElement.classList.remove('expanded');
+                        currentlyExpanded = null;
+                    } else {
+                        this.classList.add('active');
+                        targetElement.classList.add('expanded');
+                        currentlyExpanded = targetElement;
+
+                        // Smooth scroll if content is not fully visible
+                        const headerRect = this.getBoundingClientRect();
+                        const windowHeight = window.innerHeight;
+                        const bottomOffset = 100; // Extra space at the bottom
+
+                        if (headerRect.bottom + targetElement.scrollHeight > windowHeight - bottomOffset) {
+                            const scrollTarget = this.offsetTop - 100; // Scroll to show header at top with some padding
+                            window.scrollTo({
+                                top: scrollTarget,
+                                behavior: 'smooth'
+                            });
+                        }
+                    }
+                });
+
+                // Add keyboard navigation
+                header.addEventListener('keydown', function(e) {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                        e.preventDefault();
+                        this.click();
+                    }
+                });
+
+                // Make headers focusable
+                header.setAttribute('tabindex', '0');
+                header.setAttribute('role', 'button');
+                header.setAttribute('aria-expanded', 'false');
+            });
+        });
+
+        // New Skills Section functionality - Updated to work with existing structure
         document.addEventListener('DOMContentLoaded', function() {
             const skillCards = document.querySelectorAll('.skill-card');
-            let currentlyExpanded = null;
+            let currentlyExpandedSkill = null;
 
             skillCards.forEach(card => {
                 card.addEventListener('click', function() {
@@ -1829,24 +2555,24 @@
                     const targetElement = document.getElementById(targetId);
 
                     // If clicking the currently expanded section, collapse it
-                    if (currentlyExpanded === targetElement) {
+                    if (currentlyExpandedSkill === targetElement) {
                         targetElement.classList.remove('expanded');
                         expandBtn.classList.remove('expanded');
-                        currentlyExpanded = null;
+                        currentlyExpandedSkill = null;
                         return;
                     }
 
                     // Collapse currently expanded section if exists
-                    if (currentlyExpanded) {
-                        currentlyExpanded.classList.remove('expanded');
-                        const prevButton = currentlyExpanded.previousElementSibling.querySelector('.expand-btn');
+                    if (currentlyExpandedSkill) {
+                        currentlyExpandedSkill.classList.remove('expanded');
+                        const prevButton = currentlyExpandedSkill.previousElementSibling.querySelector('.expand-btn');
                         prevButton.classList.remove('expanded');
                     }
 
                     // Expand clicked section
                     targetElement.classList.add('expanded');
                     expandBtn.classList.add('expanded');
-                    currentlyExpanded = targetElement;
+                    currentlyExpandedSkill = targetElement;
                 });
             });
         });
